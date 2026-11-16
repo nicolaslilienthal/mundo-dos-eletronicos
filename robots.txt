@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.mundodoseletronicos.com.br/sitemap.xml
+Sitemap: https://mundo-dos-eletronicos.vercel.app/sitemap.xml
