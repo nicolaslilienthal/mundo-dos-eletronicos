@@ -676,24 +676,22 @@ main { position: relative; }
 .rodape-grid a:hover { color: var(--ciano); }
 .rodape-marca { display: grid; gap: 14px; justify-items: start; }
 .rodape-marca .suave { max-width: 30ch; }
-.rodape-mundo { position: relative; padding-top: .06em; margin-top: clamp(40px, 7vh, 88px); text-align: center; line-height: .82; font-family: var(--f-titulo); font-weight: 800; font-size: 18.5vw; letter-spacing: -.04em; user-select: none; overflow: hidden; }
+.rodape-mundo { position: relative; margin-top: clamp(48px, 8vh, 96px); text-align: center; line-height: .82; font-family: var(--f-titulo); font-weight: 800; font-size: 18.5vw; letter-spacing: -.04em; user-select: none; overflow: hidden; }
 .rm-contorno { display: block; color: transparent; -webkit-text-stroke: 1.5px var(--linha-clara); }
 .rm-cheio {
-  position: absolute; inset: .06em 0 0;
+  position: absolute; inset: 0;
   background: var(--gradiente-marca); -webkit-background-clip: text; background-clip: text; color: transparent;
   clip-path: inset(0 calc(100% - var(--fill, 0%)) 0 0);
 }
-/* Hover: uma luz segue o mouse por dentro das letras e a palavra "acende" */
-.rodape-mundo > span { transition: transform .6s var(--ease), -webkit-text-stroke-color .4s; }
-.rm-luz {
-  position: absolute; inset: .06em 0 0; pointer-events: none;
-  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), #fff 0, #9fdcff 7%, rgba(169, 102, 185, .55) 16%, transparent 30%);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-  opacity: 0; transition: opacity .35s ease, transform .6s var(--ease);
+/* Hover: onde o cursor passa, o preenchimento some e só o contorno aparece */
+.rodape-mundo { cursor: default; }
+.rm-contorno { transition: -webkit-text-stroke-color .4s, color .4s; }
+/* letra "fantasma" no lugar do contorno: o stroke mostra as sobreposições internas da fonte */
+.rodape-mundo.aceso .rm-contorno { -webkit-text-stroke-color: transparent; color: rgba(242, 244, 250, .1); }
+.rodape-mundo.aceso .rm-cheio {
+  -webkit-mask-image: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), transparent 0, transparent 9vw, #000 14vw);
+  mask-image: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), transparent 0, transparent 9vw, #000 14vw);
 }
-.rodape-mundo.aceso > span { transform: translateY(-3%); }
-.rodape-mundo.aceso .rm-luz { opacity: 1; }
-.rodape-mundo.aceso .rm-contorno { -webkit-text-stroke-color: var(--indigo); }
 .copy { margin-top: 28px; font: 500 .72rem var(--f-mono); letter-spacing: .1em; color: var(--texto-suave); text-transform: uppercase; }
 
 /* ---------- 23. WhatsApp flutuante ---------- */
