@@ -566,20 +566,20 @@
             </div>
 
             <fieldset class="campo" data-campo="servico" aria-describedby="erro-servico">
-              <legend>Qual serviço você precisa? <span class="obrig">*</span></legend>
+              <legend>Qual serviço você precisa? <span class="obrig">*</span> <span class="opc">(pode marcar mais de um)</span></legend>
               <div class="chips">
-                <label class="chip"><input type="radio" name="servico" value="Troca de tela" required><span>Troca de tela</span></label>
-                <label class="chip"><input type="radio" name="servico" value="Bateria"><span>Bateria</span></label>
-                <label class="chip"><input type="radio" name="servico" value="Conector de carga"><span>Conector de carga</span></label>
-                <label class="chip"><input type="radio" name="servico" value="Câmera/lente"><span>Câmera/lente</span></label>
-                <label class="chip"><input type="radio" name="servico" value="Celular molhado"><span>Celular molhado</span></label>
-                <label class="chip"><input type="radio" name="servico" value="Alto-falante/microfone"><span>Alto-falante/microfone</span></label>
-                <label class="chip"><input type="radio" name="servico" value="Botões"><span>Botões</span></label>
-                <label class="chip"><input type="radio" name="servico" value="Software/senha"><span>Software/senha</span></label>
-                <label class="chip"><input type="radio" name="servico" value="Transferência de dados"><span>Transferência de dados</span></label>
-                <label class="chip"><input type="radio" name="servico" value="Comprar acessório"><span>Comprar acessório</span></label>
-                <label class="chip"><input type="radio" name="servico" value="Celular/video game seminovo"><span>Celular/video game seminovo</span></label>
-                <label class="chip"><input type="radio" name="servico" value="Outro"><span>Outro</span></label>
+                <label class="chip"><input type="checkbox" name="servico" value="Troca de tela"><span>Troca de tela</span></label>
+                <label class="chip"><input type="checkbox" name="servico" value="Bateria"><span>Bateria</span></label>
+                <label class="chip"><input type="checkbox" name="servico" value="Conector de carga"><span>Conector de carga</span></label>
+                <label class="chip"><input type="checkbox" name="servico" value="Câmera/lente"><span>Câmera/lente</span></label>
+                <label class="chip"><input type="checkbox" name="servico" value="Celular molhado"><span>Celular molhado</span></label>
+                <label class="chip"><input type="checkbox" name="servico" value="Alto-falante/microfone"><span>Alto-falante/microfone</span></label>
+                <label class="chip"><input type="checkbox" name="servico" value="Botões"><span>Botões</span></label>
+                <label class="chip"><input type="checkbox" name="servico" value="Software/senha"><span>Software/senha</span></label>
+                <label class="chip"><input type="checkbox" name="servico" value="Transferência de dados"><span>Transferência de dados</span></label>
+                <label class="chip"><input type="checkbox" name="servico" value="Comprar acessório"><span>Comprar acessório</span></label>
+                <label class="chip"><input type="checkbox" name="servico" value="Celular/video game seminovo"><span>Celular/video game seminovo</span></label>
+                <label class="chip"><input type="checkbox" name="servico" value="Outro"><span>Outro</span></label>
               </div>
               <p class="erro" id="erro-servico" aria-live="polite"></p>
             </fieldset>
@@ -647,6 +647,7 @@
     <div class="rodape-mundo" aria-hidden="true">
       <span class="rm-contorno">MUNDO</span>
       <span class="rm-cheio">MUNDO</span>
+      <span class="rm-luz">MUNDO</span>
     </div>
     <p class="copy container">© 2026 Mundo dos Eletrônicos. Todos os direitos reservados.</p>
   </footer>

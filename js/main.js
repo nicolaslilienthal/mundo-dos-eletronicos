@@ -74,7 +74,8 @@
   function marcar(nome, valor) {
     if (!form || !valor) return;
     var r = $$('input[name="' + nome + '"]', form).filter(function (i) { return i.value === valor; })[0];
-    if (r) { r.checked = true; r.dispatchEvent(new Event('change', { bubbles: true })); }
+    // checkbox (serviço): só adiciona, sem desmarcar o que a pessoa já escolheu
+    if (r && !r.checked) { r.checked = true; r.dispatchEvent(new Event('change', { bubbles: true })); }
   }
 
   document.addEventListener('click', function (e) {
@@ -101,11 +102,21 @@
   var circuitoLinha = null;
   var velocidade = 0;
   var agendado = false;
+  var alturaRolavel = 0;
+  var alturaVisivel = window.innerHeight;
+  // mede a altura da página só quando ela muda (evita forçar layout a cada quadro de scroll)
+  function medirPagina() {
+    alturaVisivel = window.innerHeight;
+    alturaRolavel = document.documentElement.scrollHeight - alturaVisivel;
+  }
+  medirPagina();
+  window.addEventListener('resize', medirPagina);
+  if ('ResizeObserver' in window) new ResizeObserver(medirPagina).observe(document.body);
 
   function aoRolar() {
     agendado = false;
     var y = window.scrollY;
-    var total = document.documentElement.scrollHeight - window.innerHeight;
+    var total = alturaRolavel;
     var p = total > 0 ? clamp(y / total, 0, 1) : 0;
     var delta = y - ultimoY;
     velocidade = delta;
@@ -127,7 +138,7 @@
 
     // hero: do quebrado pro novo (0 → 1 no primeiro scroll)
     if (hero) {
-      var fix = clamp(y / (window.innerHeight * 0.55), 0, 1);
+      var fix = clamp(y / (alturaVisivel * 0.55), 0, 1);
       hero.style.setProperty('--fix', fix.toFixed(3));
       var ok = fix > 0.85;
       if (ok !== hero.classList.contains('consertado')) {
@@ -189,7 +200,11 @@
   /* ---------- 6. Faixas infinitas com velocidade ligada ao scroll ---------- */
   var trilhos = $$('.faixa-trilho');
   if (trilhos.length && !reduz) {
-    var estado = trilhos.map(function (t) { return { el: t, x: 0, dir: Number(t.dataset.dir) || -1 }; });
+    var estado = trilhos.map(function (t) { return { el: t, x: 0, dir: Number(t.dataset.dir) || -1, metade: t.scrollWidth / 2 }; });
+    // mede a largura só no resize/fontes (ler scrollWidth a cada quadro força layout)
+    var medirFaixas = function () { estado.forEach(function (s) { s.metade = s.el.scrollWidth / 2; }); };
+    window.addEventListener('resize', medirFaixas);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(medirFaixas);
     var faixasVisiveis = true;
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (e) { faixasVisiveis = e[0].isIntersecting; }).observe($('.faixas'));
@@ -202,7 +217,7 @@
       velocidade *= 0.9;
       if (faixasVisiveis) {
         estado.forEach(function (s) {
-          var metade = s.el.scrollWidth / 2;
+          var metade = s.metade || 1;
           s.x += s.dir * (0.6 + impulso * 0.35) * dt;
           if (s.x <= -metade) s.x += metade;
           if (s.x > 0) s.x -= metade;
@@ -332,8 +347,11 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var nome = form.elements.nome.value.trim();
-      var servicoEl = $('[name="servico"]:checked', form);
-      var servico = servicoEl && servicoEl.value;
+      // vários serviços podem ser marcados: "Troca de tela, Bateria e Conector de carga"
+      var marcados = $$('[name="servico"]:checked', form).map(function (i) { return i.value; });
+      var servico = marcados.length > 1
+        ? marcados.slice(0, -1).join(', ') + ' e ' + marcados[marcados.length - 1]
+        : marcados[0];
       var modelo = form.elements.modelo.value.trim();
       var det = detalhes.value.trim();
       var prefEl = $('[name="preferencia"]:checked', form);
@@ -341,7 +359,7 @@
 
       var primeiroErro = null;
       if (!nome) { mostrarErro('nome', 'Como a gente te chama? Escreve teu nome aqui.'); primeiroErro = form.elements.nome; }
-      if (!servico) { mostrarErro('servico', 'Escolhe um serviço (se não souber, marca “Outro”).'); primeiroErro = primeiroErro || $('[name="servico"]', form); }
+      if (!servico) { mostrarErro('servico', 'Escolhe pelo menos um serviço (se não souber, marca “Outro”).');primeiroErro = primeiroErro || $('[name="servico"]', form); }
       if (primeiroErro) { primeiroErro.focus(); return; }
 
       var linhas = [
@@ -485,6 +503,27 @@
       });
       c.addEventListener('pointerleave', function () { c.style.transform = ''; });
     });
+  }
+
+  /* ---------- 15b. "MUNDO" do rodapé: luz que segue o mouse/dedo ---------- */
+  var mundoGrande = $('.rodape-mundo');
+  if (mundoGrande && !reduz) {
+    var luzPendente = false, lx = 50, ly = 50;
+    var moverLuz = function (e) {
+      var r = mundoGrande.getBoundingClientRect();
+      lx = ((e.clientX - r.left) / r.width) * 100;
+      ly = ((e.clientY - r.top) / r.height) * 100;
+      if (luzPendente) return;
+      luzPendente = true;
+      requestAnimationFrame(function () { // no máximo 1 atualização por quadro
+        luzPendente = false;
+        mundoGrande.style.setProperty('--mx', lx.toFixed(1) + '%');
+        mundoGrande.style.setProperty('--my', ly.toFixed(1) + '%');
+      });
+    };
+    mundoGrande.addEventListener('pointerenter', function (e) { moverLuz(e); mundoGrande.classList.add('aceso'); });
+    mundoGrande.addEventListener('pointermove', moverLuz, { passive: true });
+    mundoGrande.addEventListener('pointerleave', function () { mundoGrande.classList.remove('aceso'); });
   }
 
   /* ---------- 16. Linha de circuito global (desenhada a partir das seções) ---------- */

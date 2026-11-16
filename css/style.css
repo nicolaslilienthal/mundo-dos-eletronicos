@@ -237,7 +237,7 @@ main { position: relative; }
 .circuito-global { position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; display: none; overflow: hidden; }
 .circuito-pronto .circuito-global { display: block; }
 .cg-base { fill: none; stroke: var(--linha); stroke-width: 1.5; }
-.cg-linha { fill: none; stroke: url(#grad-vertical); stroke-width: 2; stroke-dasharray: 1; stroke-dashoffset: 1; stroke-linecap: round; filter: drop-shadow(0 0 4px rgba(99, 116, 206, .8)); }
+.cg-linha { fill: none; stroke: url(#grad-vertical); stroke-width: 2.5; stroke-dasharray: 1; stroke-dashoffset: 1; stroke-linecap: round; }
 .cg-nos circle { fill: var(--preto); stroke: var(--linha-clara); stroke-width: 1.5; transition: stroke .3s, fill .3s; }
 .cg-nos circle.on { stroke: var(--ciano); fill: var(--ciano); }
 
@@ -245,11 +245,11 @@ main { position: relative; }
 .hero-fundo, .ad-antes, .como-foto, .card-img, .quem-foto-grande, .quem-foto-equipe, .visite-foto, .cuias-img { position: relative; overflow: hidden; }
 .hero-fundo::after, .ad-antes::after, .como-foto::after, .card-img::after, .quem-foto-grande::after, .quem-foto-equipe::after, .visite-foto::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(180deg, rgba(40, 52, 120, .22), rgba(6, 7, 12, .38));
-  mix-blend-mode: multiply;
+  /* tom azul-escuro uniforme; sem mix-blend-mode/filter pra não pesar no scroll */
+  background: linear-gradient(180deg, rgba(20, 28, 80, .2), rgba(6, 7, 12, .32));
 }
 .hero-fundo img, .ad-antes img, .como-foto img, .card-img img, .quem-foto-grande img, .quem-foto-equipe img, .visite-foto img, .cuias img {
-  width: 100%; height: 100%; object-fit: cover; filter: saturate(.88) contrast(1.06);
+  width: 100%; height: 100%; object-fit: cover;
 }
 
 /* ---------- 11. Hero ---------- */
@@ -411,7 +411,7 @@ main { position: relative; }
 .passos-wrap { position: relative; padding-left: 64px; }
 .passos-trilha { position: absolute; left: 8px; top: 30px; bottom: 30px; width: 20px; height: calc(100% - 60px); overflow: visible; }
 .pt-base { stroke: var(--linha); stroke-width: 2; fill: none; vector-effect: non-scaling-stroke; }
-.pt-linha { stroke: var(--ciano); stroke-width: 2; fill: none; stroke-dasharray: 1; stroke-dashoffset: 0; vector-effect: non-scaling-stroke; filter: drop-shadow(0 0 4px var(--ciano)); }
+.pt-linha { stroke: var(--ciano); stroke-width: 2; fill: none; stroke-dasharray: 1; stroke-dashoffset: 0; vector-effect: non-scaling-stroke; }
 .passo { position: relative; display: flex; gap: 18px; padding: 26px 0; }
 .passo-no {
   position: absolute; left: -64px; top: 24px;
@@ -614,8 +614,7 @@ main { position: relative; }
   position: relative;
   padding: clamp(20px, 4vw, 44px);
   border: 1px solid var(--linha); border-radius: 28px;
-  background: rgba(14, 17, 32, .88);
-  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  background: rgba(14, 17, 32, .94);
   box-shadow: 0 40px 90px -40px rgba(99, 116, 206, .45);
 }
 .campo { margin: 0 0 26px; padding: 0; border: 0; min-width: 0; }
@@ -677,13 +676,24 @@ main { position: relative; }
 .rodape-grid a:hover { color: var(--ciano); }
 .rodape-marca { display: grid; gap: 14px; justify-items: start; }
 .rodape-marca .suave { max-width: 30ch; }
-.rodape-mundo { position: relative; margin-top: clamp(48px, 8vh, 96px); text-align: center; line-height: .82; font-family: var(--f-titulo); font-weight: 800; font-size: 18.5vw; letter-spacing: -.04em; user-select: none; overflow: hidden; }
+.rodape-mundo { position: relative; padding-top: .06em; margin-top: clamp(40px, 7vh, 88px); text-align: center; line-height: .82; font-family: var(--f-titulo); font-weight: 800; font-size: 18.5vw; letter-spacing: -.04em; user-select: none; overflow: hidden; }
 .rm-contorno { display: block; color: transparent; -webkit-text-stroke: 1.5px var(--linha-clara); }
 .rm-cheio {
-  position: absolute; inset: 0;
+  position: absolute; inset: .06em 0 0;
   background: var(--gradiente-marca); -webkit-background-clip: text; background-clip: text; color: transparent;
   clip-path: inset(0 calc(100% - var(--fill, 0%)) 0 0);
 }
+/* Hover: uma luz segue o mouse por dentro das letras e a palavra "acende" */
+.rodape-mundo > span { transition: transform .6s var(--ease), -webkit-text-stroke-color .4s; }
+.rm-luz {
+  position: absolute; inset: .06em 0 0; pointer-events: none;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), #fff 0, #9fdcff 7%, rgba(169, 102, 185, .55) 16%, transparent 30%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  opacity: 0; transition: opacity .35s ease, transform .6s var(--ease);
+}
+.rodape-mundo.aceso > span { transform: translateY(-3%); }
+.rodape-mundo.aceso .rm-luz { opacity: 1; }
+.rodape-mundo.aceso .rm-contorno { -webkit-text-stroke-color: var(--indigo); }
 .copy { margin-top: 28px; font: 500 .72rem var(--f-mono); letter-spacing: .1em; color: var(--texto-suave); text-transform: uppercase; }
 
 /* ---------- 23. WhatsApp flutuante ---------- */
