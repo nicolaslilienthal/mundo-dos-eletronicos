@@ -15,12 +15,15 @@
 
   var reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var mobile = window.matchMedia('(max-width: 1023px)').matches || window.matchMedia('(pointer: coarse)').matches;
-  var fraco = (navigator.hardwareConcurrency || 8) <= 4 || (navigator.deviceMemory && navigator.deviceMemory <= 2);
+  // Só memória muito baixa (Chrome/Android informa) já vai direto pro estático.
+  // Não usamos hardwareConcurrency: o Safari do iPhone informa um número baixo de
+  // propósito, e iPhones bons caíam no estático. Em vez disso medimos o FPS real (abaixo).
+  var fraco = !!(navigator.deviceMemory && navigator.deviceMemory <= 2);
 
   function usarEstatico() { doc.classList.add('sem-3d'); }
 
-  // Movimento reduzido ou celular fraco: versão estática em SVG (que também "conserta" com o scroll)
-  if (reduz || (mobile && fraco) || !temWebGL()) { usarEstatico(); return; }
+  // Movimento reduzido, aparelho fraco ou sem WebGL: versão em SVG (que também "conserta" com o scroll)
+  if (reduz || fraco || !temWebGL()) { usarEstatico(); return; }
 
   function temWebGL() {
     try { var c = document.createElement('canvas'); return !!(c.getContext('webgl2') || c.getContext('webgl')); }
@@ -326,8 +329,28 @@
 
     function progressoFix() { return Math.min(1, Math.max(0, window.scrollY / (window.innerHeight * 0.55))); }
 
+    // Teste de fluidez real: se o aparelho não aguentar (~24 fps), troca pro SVG estático
+    var amostras = 0, somaDt = 0, testado = false;
+    function testarFluidez(dtReal) {
+      if (testado) return;
+      amostras++;
+      if (amostras <= 15) return;              // ignora os primeiros quadros (compilação/aquecimento)
+      somaDt += dtReal;
+      if (amostras < 75) return;
+      testado = true;
+      if (somaDt / (amostras - 15) > 1 / 24) {
+        renderer.setAnimationLoop(null); rodando = false; desistiu = true;
+        canvas.classList.remove('pronto');
+        usarEstatico();
+        renderer.dispose();
+      }
+    }
+    var desistiu = false;
+
     function quadro() {
-      var dt = Math.min(relogio.getDelta(), 0.05), t = relogio.elapsedTime;
+      var bruto = relogio.getDelta();
+      testarFluidez(bruto);
+      var dt = Math.min(bruto, 0.05), t = relogio.elapsedTime;
       fixSuave += (progressoFix() - fixSuave) * 0.12;
       compor(fixSuave);
       smx += (mx - smx) * 0.05; smy += (my - smy) * 0.05;
@@ -342,7 +365,7 @@
       renderer.render(cena, camera);
     }
     function atualizarLaco() {
-      var deve = visivel && abaAtiva;
+      var deve = visivel && abaAtiva && !desistiu;
       if (deve && !rodando) { relogio.getDelta(); renderer.setAnimationLoop(quadro); rodando = true; }
       else if (!deve && rodando) { renderer.setAnimationLoop(null); rodando = false; }
     }

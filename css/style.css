@@ -789,9 +789,8 @@ main { position: relative; }
   html { scroll-behavior: auto; }
   .faixa-trilho, .globo-gira, .zap-btn::before, .aval-card, .btn-enviar::after, .hero-rolar span, .status-loja .bolinha { animation: none !important; }
   .js .hero-anim { opacity: 1; animation: none; }
-  .peca, .card-prod { transition-duration: .01ms; }
-  .rm-cheio { clip-path: none; }
-  .pt-linha, .orc-trilhas path { stroke-dashoffset: 0 !important; }
 }
+/* Celular: sem o grão fixo em tela cheia (camada extra a cada quadro de scroll) */
+@media (max-width: 1023px) { .grao { display: none; } }
 .rm main > section:not(.hero) { opacity: 0; transition: opacity .7s ease; }
 .rm main > section.visto { opacity: 1; }

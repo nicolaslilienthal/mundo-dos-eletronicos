@@ -32,7 +32,7 @@
   var clamp = function (v, a, b) { return Math.min(b, Math.max(a, v)); };
 
   if (!temGSAP) doc.classList.add('sem-gsap');
-  if (reduz) doc.classList.add('rm');
+  if (reduz && !temGSAP) doc.classList.add('rm'); // fade simples só se o GSAP não carregar
 
   /* ---------- 0. Intro (o CSS faz a animação; aqui só marcamos a visita) ---------- */
   var comIntro = doc.classList.contains('intro-on');
@@ -199,7 +199,7 @@
 
   /* ---------- 6. Faixas infinitas com velocidade ligada ao scroll ---------- */
   var trilhos = $$('.faixa-trilho');
-  if (trilhos.length && !reduz) {
+  if (trilhos.length) {
     var estado = trilhos.map(function (t) { return { el: t, x: 0, dir: Number(t.dataset.dir) || -1, metade: t.scrollWidth / 2 }; });
     // mede a largura só no resize/fontes (ler scrollWidth a cada quadro força layout)
     var medirFaixas = function () { estado.forEach(function (s) { s.metade = s.el.scrollWidth / 2; }); };
@@ -218,7 +218,7 @@
       if (faixasVisiveis) {
         estado.forEach(function (s) {
           var metade = s.metade || 1;
-          s.x += s.dir * (0.6 + impulso * 0.35) * dt;
+          s.x += s.dir * (reduz ? 0.3 : 0.6 + impulso * 0.35) * dt;
           if (s.x <= -metade) s.x += metade;
           if (s.x > 0) s.x -= metade;
           s.el.style.transform = 'translate3d(' + s.x.toFixed(2) + 'px,0,0)';
@@ -281,7 +281,7 @@
   /* ---------- 9. Contadores e estrelas ---------- */
   function contar(el) {
     var fim = Number(el.dataset.contar), ini = Number(el.dataset.de || 0), casas = Number(el.dataset.casas || 0);
-    var dur = reduz ? 0 : 1400, t0 = performance.now();
+    var dur = 1400, t0 = performance.now();
     (function passo(t) {
       var k = dur ? clamp((t - t0) / dur, 0, 1) : 1;
       var e = 1 - Math.pow(1 - k, 3);
@@ -297,7 +297,7 @@
         ioNum.unobserve(en.target);
         if (en.target === estrelas) {
           $$('svg', estrelas).forEach(function (s, i) {
-            setTimeout(function () { s.classList.add('on'); setTimeout(function () { s.classList.add('fim'); }, 380); }, reduz ? 0 : 250 + i * 230);
+            setTimeout(function () { s.classList.add('on'); setTimeout(function () { s.classList.add('fim'); }, 380); }, 250 + i * 230);
           });
         } else contar(en.target);
       });
@@ -507,7 +507,7 @@
 
   /* ---------- 15b. "MUNDO" do rodapé: luz que segue o mouse/dedo ---------- */
   var mundoGrande = $('.rodape-mundo');
-  if (mundoGrande && !reduz) {
+  if (mundoGrande) {
     var luzPendente = false, lx = 50, ly = 50;
     var moverLuz = function (e) {
       var r = mundoGrande.getBoundingClientRect();
@@ -568,28 +568,53 @@
   }
 
   /* ---------- 17. Animações com GSAP + ScrollTrigger ---------- */
-  if (temGSAP && !reduz) {
+  /* Os efeitos rodam sempre que o GSAP carregar, no computador e no celular.
+     Com "reduzir movimento" ligado no aparelho (comum no modo economia de bateria
+     de muitos Androids e no iPhone), ficam mais suaves: sem parallax, sem
+     seção fixa, sem blur e com deslocamentos menores, mas ainda com vida. */
+  if (temGSAP) {
     var atraso = comIntro ? 1.05 : 0.15;
+    var celular = window.matchMedia('(max-width: 1023px)').matches;
+    var suave = reduz;               // versão leve dos efeitos
+    var dist = suave ? 0.35 : 1;     // escala dos deslocamentos
 
-    // Hero: cada palavra entra separada, com rotação e blur saindo
+    // No celular, a barra de endereço que aparece/some não deve recalcular tudo (evita tranco)
+    ScrollTrigger.config({ ignoreMobileResize: true });
+
+    // Hero: cada palavra entra separada (blur só no computador: no celular pesa)
     doc.classList.add('gsap-hero'); // desliga a rede de segurança do CSS
     gsap.set('.hero-anim', { opacity: 0 });
+    var usarBlur = !celular && !suave;
     var tl = gsap.timeline({ delay: atraso, defaults: { ease: 'power3.out' } });
-    tl.fromTo('.hero-etiqueta', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: .6 })
-      .fromTo('.hp', { opacity: 0, yPercent: 60, rotate: 8, filter: 'blur(14px)' },
-        { opacity: 1, yPercent: 0, rotate: 0, filter: 'blur(0px)', duration: .9, stagger: .16 }, '-=.35')
-      .fromTo('.hero-linha2', { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: .8 }, '-=.45')
-      .fromTo(['.hero-sub', '.hero-botoes', '.hero-confianca'], { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: .7, stagger: .1 }, '-=.5');
+    tl.fromTo('.hero-etiqueta', { opacity: 0, y: 14 * dist }, { opacity: 1, y: 0, duration: .6 })
+      .fromTo('.hp', { opacity: 0, yPercent: 60 * dist, rotate: 8 * dist, filter: usarBlur ? 'blur(14px)' : 'none' },
+        { opacity: 1, yPercent: 0, rotate: 0, filter: usarBlur ? 'blur(0px)' : 'none', duration: .9, stagger: .16, clearProps: 'filter' }, '-=.35')
+      .fromTo('.hero-linha2', { opacity: 0, y: 26 * dist }, { opacity: 1, y: 0, duration: .8 }, '-=.45')
+      .fromTo(['.hero-sub', '.hero-botoes', '.hero-confianca'], { opacity: 0, y: 18 * dist }, { opacity: 1, y: 0, duration: .7, stagger: .1 }, '-=.5');
 
     // Fundo do hero com parallax
-    gsap.to('.hero-fundo', { yPercent: 16, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+    if (!suave) gsap.to('.hero-fundo', { yPercent: 16, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
 
     // Títulos: palavras sobem de baixo com leve rotação
     $$('[data-split]').forEach(function (el) {
       gsap.from($$('.wi', el), {
-        yPercent: 115, rotate: 5, opacity: 0, duration: .9, ease: 'power3.out', stagger: .055,
-        scrollTrigger: { trigger: el, start: 'top 86%', once: true }
+        yPercent: suave ? 40 : 115, rotate: 5 * dist, opacity: 0, duration: .9, ease: 'power3.out', stagger: .055,
+        scrollTrigger: { trigger: el, start: 'top 88%', once: true }
       });
+    });
+
+    // Cards e blocos entram em sequência conforme aparecem (dá vida ao rolar, principalmente no celular)
+    // no computador o .servico já tem o próprio destaque por opacidade, então fica de fora
+    var blocos = (celular ? '.servico, ' : '') + '.passo, .card-prod, .faq-item, .numeros > div, .entrega, .form-orc, .endereco, .horario, .visite-botoes, .aval-nota, .ad-slider, .ad-texto > *:not(.titulo), .quem-bio, .rodape-grid > div, .servicos-nota';
+    gsap.set(blocos, { opacity: 0, y: 46 * dist });
+    ScrollTrigger.batch(blocos, {
+      start: 'top 90%', once: true,
+      onEnter: function (lote) {
+        gsap.to(lote, {
+          opacity: 1, y: 0, duration: .8, ease: 'power3.out', stagger: .09, overwrite: true,
+          clearProps: 'opacity,transform' // devolve o controle pro CSS (destaque do serviço ativo, tilt)
+        });
+      }
     });
 
     // Imagens com revelação por máscara
@@ -597,16 +622,16 @@
       var img = $('img', fig);
       gsap.timeline({ scrollTrigger: { trigger: fig, start: 'top 82%', once: true } })
         .fromTo(fig, { clipPath: 'inset(100% 0% 0% 0% round 24px)' }, { clipPath: 'inset(0% 0% 0% 0% round 24px)', duration: 1.2, ease: 'expo.out' })
-        .from(img, { scale: 1.25, duration: 1.6, ease: 'expo.out' }, 0);
+        .from(img, { scale: suave ? 1.08 : 1.25, duration: 1.6, ease: 'expo.out' }, 0);
     });
 
     // Parallax leve
-    $$('.parallax').forEach(function (p) {
+    if (!suave) $$('.parallax').forEach(function (p) {
       gsap.fromTo(p, { yPercent: -6 }, { yPercent: 6, ease: 'none', scrollTrigger: { trigger: p.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } });
     });
 
     // Foto da equipe entra de lado
-    gsap.from('.quem-foto-equipe', { xPercent: 40, opacity: 0, rotate: 10, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: '.quem-fotos', start: 'top 70%', once: true } });
+    gsap.from('.quem-foto-equipe', { xPercent: 40 * dist, opacity: 0, rotate: 10 * dist, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: '.quem-fotos', start: 'top 70%', once: true } });
     gsap.from('.cuias img', { y: 30, opacity: 0, rotate: -16, duration: 1, ease: 'back.out(1.6)', scrollTrigger: { trigger: '.cuias', start: 'top 90%', once: true } });
 
     // Como funciona: trilha vertical se desenha + nós acendem
@@ -639,9 +664,10 @@
       });
     }
 
-    // Loja: seção fixa com rolagem horizontal (só desktop)
+    // Loja: seção fixa com rolagem horizontal (só desktop e sem movimento reduzido).
+    // No celular a galeria é um carrossel de arrastar; os cards entram pelo batch acima.
     var mm = gsap.matchMedia();
-    mm.add('(min-width: 1024px)', function () {
+    mm.add('(min-width: 1024px) and (prefers-reduced-motion: no-preference)', function () {
       var trilho = $('.loja-trilho'), cards = $('.loja-cards');
       if (!trilho || !cards) return;
       doc.classList.add('loja-pinada');
@@ -656,7 +682,7 @@
     ScrollTrigger.addEventListener('refresh', construirCircuito);
     window.addEventListener('load', function () { ScrollTrigger.refresh(); });
   } else {
-    // sem GSAP ou com movimento reduzido: tudo visível, trilhas desenhadas
+    // sem GSAP (CDN fora do ar): tudo visível, trilhas desenhadas
     window.addEventListener('load', construirCircuito);
     $$('.pt-linha, .orc-trilhas path').forEach(function (p) { p.style.strokeDashoffset = '0'; });
     $$('.passo').forEach(function (p) { p.classList.add('ativo'); });
