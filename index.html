@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Conserto de Celular em São Lourenço do Sul | Mundo dos Eletrônicos</title>
+  <meta name="description" content="Assistência técnica de celulares no Centro de São Lourenço do Sul: troca de tela, bateria, conector, celular molhado e mais. Orçamento sem compromisso pelo WhatsApp (53) 99145-9101.">
+  <meta name="theme-color" content="#06070C">
+  <meta name="color-scheme" content="dark">
+
+  <!-- CONFIRMAR DOMÍNIO: troque https://www.mundodoseletronicos.com.br/ pelo domínio final (aqui, no Open Graph, no JSON-LD, robots.txt e sitemap.xml) -->
+  <link rel="canonical" href="https://www.mundodoseletronicos.com.br/">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Mundo dos Eletrônicos">
+  <meta property="og:title" content="Conserto de Celular em São Lourenço do Sul | Mundo dos Eletrônicos">
+  <meta property="og:description" content="Caiu? Quebrou? Molhou? A gente resolve. Troca de tela, bateria, conector e mais, no Centro de São Lourenço do Sul.">
+  <meta property="og:url" content="https://www.mundodoseletronicos.com.br/">
+  <meta property="og:image" content="https://www.mundodoseletronicos.com.br/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Fachada da Mundo dos Eletrônicos com o logo da loja">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Conserto de Celular em São Lourenço do Sul | Mundo dos Eletrônicos">
+  <meta name="twitter:description" content="Caiu? Quebrou? Molhou? A gente resolve. Orçamento sem compromisso pelo WhatsApp.">
+  <meta name="twitter:image" content="https://www.mundodoseletronicos.com.br/img/og-image.jpg">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Manrope:wght@400;500;600;700&family=Unbounded:wght@600;700;800&display=swap">
+
+  <!-- Imagem do hero (LCP no celular) -->
+  <link rel="preload" as="image" type="image/avif" imagesrcset="img/02-entrada-cliente-chegando-sm.avif 400w, img/02-entrada-cliente-chegando-lg.avif 720w" imagesizes="(min-width: 1024px) 46vw, 100vw" fetchpriority="high">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Intro: decide antes do primeiro paint se a abertura roda (só 1ª visita, sem reduced-motion) -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!reduz && !sessionStorage.getItem('mundo-intro')) d.classList.add('intro-on');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Bibliotecas (versões fixas) -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/hero3d.js"></script>
+
+  <!-- Dados estruturados: negócio local -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ElectronicsStore"],
+    "name": "Mundo dos Eletrônicos",
+    "description": "Assistência técnica de celulares e tablets e loja de acessórios no Centro de São Lourenço do Sul.",
+    "url": "https://www.mundodoseletronicos.com.br/",
+    "image": "https://www.mundodoseletronicos.com.br/img/01-fachada-da-loja-lg.webp",
+    "logo": "https://www.mundodoseletronicos.com.br/favicon.svg",
+    "telephone": "+55 53 99145-9101",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Coronel Alfredo Born, 652",
+      "addressLocality": "São Lourenço do Sul",
+      "addressRegion": "RS",
+      "postalCode": "96170-000",
+      "addressCountry": "BR"
+    },
+    "areaServed": "São Lourenço do Sul",
+    "sameAs": ["https://www.instagram.com/mundodoeletronicosls/"],
+    "openingHours": "Mo-Sa 08:30-18:00",
+    "priceRange": "$$"
+  }
+  </script>
+  <!-- CONFIRMAR COM O CLIENTE: openingHours e priceRange do JSON-LD acima -->
+
+  <!-- Dados estruturados: perguntas frequentes -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Vocês fazem orçamento sem compromisso?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Você chama no WhatsApp ou passa na loja e a gente avalia o aparelho."}},
+      {"@type": "Question", "name": "Quanto tempo demora o conserto?", "acceptedAnswer": {"@type": "Answer", "text": "Depende do modelo e do serviço. Muitos consertos ficam prontos rápido; no orçamento a gente já te passa o prazo."}},
+      {"@type": "Question", "name": "Vocês buscam o celular em casa?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, temos serviço de busca e entrega com motoboy."}},
+      {"@type": "Question", "name": "Meu celular caiu na água, o que eu faço?", "acceptedAnswer": {"@type": "Answer", "text": "Não tente ligar nem carregar. Traz o quanto antes pra limpeza química."}},
+      {"@type": "Question", "name": "Vocês passam os dados pro celular novo?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, a gente faz a transferência na hora."}},
+      {"@type": "Question", "name": "Vocês vendem celular?", "acceptedAnswer": {"@type": "Answer", "text": "Temos seminovos revisados e com garantia. Chama no WhatsApp pra ver o que tem no momento."}}
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Gradiente da marca reaproveitado por todos os SVGs (globo, peças, trilhas) -->
+  <svg class="sr-defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="grad-globo" x1="10" y1="90" x2="80" y2="10" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#3FA9E0"/><stop offset=".5" stop-color="#6374CE"/><stop offset="1" stop-color="#A966B9"/>
+      </linearGradient>
+      <linearGradient id="grad-marca" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#3FA9E0"/><stop offset=".5" stop-color="#6374CE"/><stop offset="1" stop-color="#A966B9"/>
+      </linearGradient>
+      <linearGradient id="grad-vertical" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#3FA9E0"/><stop offset=".5" stop-color="#6374CE"/><stop offset="1" stop-color="#A966B9"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- 0. Intro de carregamento (CSS puro; some sozinha mesmo se o JS falhar) -->
+  <div class="intro" aria-hidden="true">
+    <div class="intro-marca">
+      <svg class="globo globo-intro" viewBox="0 0 100 100" focusable="false"><g class="g-trilhas"><path d="M38.2 17.7C43.6 22.1 50.2 16.0 57.0 16" pathLength="1"/><path d="M27.4 23.4C38.5 27.0 51.9 22.0 69.0 22" pathLength="1"/><path d="M21.5 29.1C32.6 32.0 46.0 28.0 63.0 28" pathLength="1"/><path d="M17.8 34.8C34.3 36.9 54.2 34.0 81.0 34" pathLength="1"/><path d="M15.4 40.5C30.1 41.8 47.6 40.0 71.0 40" pathLength="1"/><path d="M14.2 46.2C33.2 46.7 55.9 46.0 87.0 46" pathLength="1"/><path d="M14.1 51.9C30.5 51.6 50.3 52.0 77.0 52" pathLength="1"/><path d="M14.9 57.6C28.7 56.6 45.2 58.0 67.0 58" pathLength="1"/><path d="M16.8 63.3C33.6 61.5 53.8 64.0 81.0 64" pathLength="1"/><path d="M20.1 69.0C33.1 66.4 48.6 70.0 69.0 70" pathLength="1"/><path d="M25.1 74.7C35.3 71.3 47.6 76.0 63.0 76" pathLength="1"/><path d="M33.5 80.4C39.6 76.2 47.0 82.0 55.0 82" pathLength="1"/></g><g class="g-nos"><circle cx="60" cy="16" r="2.3" class="g-anel"/><circle cx="70.5" cy="22" r="1.6" class="g-ponto"/><circle cx="66" cy="28" r="2.3" class="g-anel"/><circle cx="84" cy="34" r="2.3" class="g-anel"/><circle cx="72.5" cy="40" r="1.6" class="g-ponto"/><circle cx="90" cy="46" r="2.3" class="g-anel"/><circle cx="80" cy="52" r="2.3" class="g-anel"/><circle cx="68.5" cy="58" r="1.6" class="g-ponto"/><circle cx="84" cy="64" r="2.3" class="g-anel"/><circle cx="70.5" cy="70" r="1.6" class="g-ponto"/><circle cx="66" cy="76" r="2.3" class="g-anel"/><circle cx="58" cy="82" r="2.3" class="g-anel"/><circle cx="40" cy="25" r="1.5" class="g-ponto"/><circle cx="34" cy="43" r="1.5" class="g-ponto"/><circle cx="44" cy="55" r="1.5" class="g-ponto"/><circle cx="38" cy="67" r="1.5" class="g-ponto"/><circle cx="52" cy="37" r="1.5" class="g-ponto"/><circle cx="56" cy="61" r="1.5" class="g-ponto"/></g></svg>
+      <span class="intro-mundo">Mundo</span>
+    </div>
+  </div>
+
+  <!-- Barra de progresso de leitura -->
+  <div class="progresso" aria-hidden="true"><span></span></div>
+
+  <!-- 1. Header -->
+  <header class="topo" data-topo>
+    <div class="topo-inner container">
+      <a class="logo" href="#inicio" aria-label="Mundo dos Eletrônicos, voltar ao início">
+        <svg class="globo" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g class="g-trilhas"><path d="M38.2 17.7C43.6 22.1 50.2 16.0 57.0 16" pathLength="1"/><path d="M27.4 23.4C38.5 27.0 51.9 22.0 69.0 22" pathLength="1"/><path d="M21.5 29.1C32.6 32.0 46.0 28.0 63.0 28" pathLength="1"/><path d="M17.8 34.8C34.3 36.9 54.2 34.0 81.0 34" pathLength="1"/><path d="M15.4 40.5C30.1 41.8 47.6 40.0 71.0 40" pathLength="1"/><path d="M14.2 46.2C33.2 46.7 55.9 46.0 87.0 46" pathLength="1"/><path d="M14.1 51.9C30.5 51.6 50.3 52.0 77.0 52" pathLength="1"/><path d="M14.9 57.6C28.7 56.6 45.2 58.0 67.0 58" pathLength="1"/><path d="M16.8 63.3C33.6 61.5 53.8 64.0 81.0 64" pathLength="1"/><path d="M20.1 69.0C33.1 66.4 48.6 70.0 69.0 70" pathLength="1"/><path d="M25.1 74.7C35.3 71.3 47.6 76.0 63.0 76" pathLength="1"/><path d="M33.5 80.4C39.6 76.2 47.0 82.0 55.0 82" pathLength="1"/></g><g class="g-nos"><circle cx="60" cy="16" r="2.3" class="g-anel"/><circle cx="70.5" cy="22" r="1.6" class="g-ponto"/><circle cx="66" cy="28" r="2.3" class="g-anel"/><circle cx="84" cy="34" r="2.3" class="g-anel"/><circle cx="72.5" cy="40" r="1.6" class="g-ponto"/><circle cx="90" cy="46" r="2.3" class="g-anel"/><circle cx="80" cy="52" r="2.3" class="g-anel"/><circle cx="68.5" cy="58" r="1.6" class="g-ponto"/><circle cx="84" cy="64" r="2.3" class="g-anel"/><circle cx="70.5" cy="70" r="1.6" class="g-ponto"/><circle cx="66" cy="76" r="2.3" class="g-anel"/><circle cx="58" cy="82" r="2.3" class="g-anel"/><circle cx="40" cy="25" r="1.5" class="g-ponto"/><circle cx="34" cy="43" r="1.5" class="g-ponto"/><circle cx="44" cy="55" r="1.5" class="g-ponto"/><circle cx="38" cy="67" r="1.5" class="g-ponto"/><circle cx="52" cy="37" r="1.5" class="g-ponto"/><circle cx="56" cy="61" r="1.5" class="g-ponto"/></g></svg>
+        <span class="logo-txt"><span class="logo-mundo">Mundo</span><span class="logo-dos">Dos Eletrônicos</span></span>
+      </a>
+      <nav class="topo-nav" aria-label="Seções do site">
+        <a href="#servicos">Serviços</a>
+        <a href="#loja">Loja</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#onde-estamos">Onde estamos</a>
+      </nav>
+      <a class="btn btn-amarelo topo-cta magnetico" href="#orcamento" data-orcar>Pedir orçamento</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-mobile" aria-label="Abrir menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu mobile em tela cheia -->
+  <div class="menu-mobile" id="menu-mobile" inert>
+    <nav aria-label="Menu">
+      <a href="#servicos" style="--i:0">Serviços</a>
+      <a href="#loja" style="--i:1">Loja</a>
+      <a href="#como-funciona" style="--i:2">Como funciona</a>
+      <a href="#avaliacoes" style="--i:3">Avaliações</a>
+      <a href="#onde-estamos" style="--i:4">Onde estamos</a>
+      <a href="#orcamento" style="--i:5" class="menu-orc">Pedir orçamento</a>
+    </nav>
+    <a class="btn btn-zap-cheio menu-zap" style="--i:6" href="https://wa.me/5553991459101?text=Ol%C3%A1!%20Vim%20pelo%20site." target="_blank" rel="noopener">
+      <svg class="ico-zap" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.8l4.8-1.3A9.8 9.8 0 1 0 12 2.2zm0 1.8a8 8 0 1 1-4.1 14.9l-.3-.2-2.8.8.8-2.7-.2-.3A8 8 0 0 1 12 4z"/><path d="M8.6 7.3c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.1-.2.3 0 .6.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.8.9c.3.1.4.2.5.3 0 .2 0 .9-.3 1.6-.3.7-1.6 1.4-2.2 1.4-.6.1-1.3.2-4.1-.9-3.4-1.4-5.5-4.9-5.7-5.1-.2-.2-1.3-1.8-1.3-3.4 0-1.6.8-2.4 1.1-2.7z"/></svg> Chamar no WhatsApp
+    </a>
+    <p class="etiqueta menu-end" style="--i:7">RUA CEL. ALFREDO BORN, 652 · CENTRO</p>
+  </div>
+
+  <!-- Linha de circuito que percorre a página toda (desenhada pelo JS) -->
+  <main id="conteudo">
+    <svg class="circuito-global" aria-hidden="true" focusable="false"><path class="cg-base"/><path class="cg-linha"/><g class="cg-nos"></g></svg>
+
+    <!-- 2. Hero -->
+    <section class="hero" id="inicio" data-tema="#06070C">
+      <div class="hero-fundo" aria-hidden="true">
+        <picture><source type="image/avif" srcset="img/02-entrada-cliente-chegando-sm.avif 400w, img/02-entrada-cliente-chegando-lg.avif 720w" sizes="(min-width: 1024px) 46vw, 100vw"><source type="image/webp" srcset="img/02-entrada-cliente-chegando-sm.webp 400w, img/02-entrada-cliente-chegando-lg.webp 720w" sizes="(min-width: 1024px) 46vw, 100vw"><img src="img/02-entrada-cliente-chegando-lg.webp" width="720" height="1280" alt="Cliente entrando na loja Mundo dos Eletrônicos, com o logo iluminado na fachada" loading="eager" fetchpriority="high" decoding="async"></picture>
+      </div>
+
+      <div class="hero-3d" aria-hidden="true">
+        <canvas id="hero-canvas"></canvas>
+        <!-- Versão leve/estática (reduced-motion, aparelho fraco ou sem WebGL) -->
+        <svg class="hero-fallback" viewBox="0 0 240 460" focusable="false">
+          <rect x="10" y="10" width="220" height="440" rx="34" class="hf-corpo"/>
+          <rect x="22" y="22" width="196" height="416" rx="24" class="hf-tela"/>
+          <g class="hf-acesa">
+            <rect x="22" y="22" width="196" height="416" rx="24" fill="url(#hf-brilho)"/>
+            <g transform="translate(70 120) scale(1)"><svg width="100" height="100" viewBox="0 0 100 100"><g class="g-trilhas"><path d="M38.2 17.7C43.6 22.1 50.2 16.0 57.0 16" pathLength="1"/><path d="M27.4 23.4C38.5 27.0 51.9 22.0 69.0 22" pathLength="1"/><path d="M21.5 29.1C32.6 32.0 46.0 28.0 63.0 28" pathLength="1"/><path d="M17.8 34.8C34.3 36.9 54.2 34.0 81.0 34" pathLength="1"/><path d="M15.4 40.5C30.1 41.8 47.6 40.0 71.0 40" pathLength="1"/><path d="M14.2 46.2C33.2 46.7 55.9 46.0 87.0 46" pathLength="1"/><path d="M14.1 51.9C30.5 51.6 50.3 52.0 77.0 52" pathLength="1"/><path d="M14.9 57.6C28.7 56.6 45.2 58.0 67.0 58" pathLength="1"/><path d="M16.8 63.3C33.6 61.5 53.8 64.0 81.0 64" pathLength="1"/><path d="M20.1 69.0C33.1 66.4 48.6 70.0 69.0 70" pathLength="1"/><path d="M25.1 74.7C35.3 71.3 47.6 76.0 63.0 76" pathLength="1"/><path d="M33.5 80.4C39.6 76.2 47.0 82.0 55.0 82" pathLength="1"/></g><g class="g-nos"><circle cx="60" cy="16" r="2.3" class="g-anel"/><circle cx="70.5" cy="22" r="1.6" class="g-ponto"/><circle cx="66" cy="28" r="2.3" class="g-anel"/><circle cx="84" cy="34" r="2.3" class="g-anel"/><circle cx="72.5" cy="40" r="1.6" class="g-ponto"/><circle cx="90" cy="46" r="2.3" class="g-anel"/><circle cx="80" cy="52" r="2.3" class="g-anel"/><circle cx="68.5" cy="58" r="1.6" class="g-ponto"/><circle cx="84" cy="64" r="2.3" class="g-anel"/><circle cx="70.5" cy="70" r="1.6" class="g-ponto"/><circle cx="66" cy="76" r="2.3" class="g-anel"/><circle cx="58" cy="82" r="2.3" class="g-anel"/><circle cx="40" cy="25" r="1.5" class="g-ponto"/><circle cx="34" cy="43" r="1.5" class="g-ponto"/><circle cx="44" cy="55" r="1.5" class="g-ponto"/><circle cx="38" cy="67" r="1.5" class="g-ponto"/><circle cx="52" cy="37" r="1.5" class="g-ponto"/><circle cx="56" cy="61" r="1.5" class="g-ponto"/></g></svg></g>
+            <text x="120" y="262" text-anchor="middle" class="hf-mundo">Mundo</text>
+            <text x="120" y="330" text-anchor="middle" class="hf-status">STATUS: CONSERTADO ✓</text>
+          </g>
+          <g class="hf-racha" fill="none" stroke="#dfe6ff" stroke-linecap="round">
+            <path d="M150 140l-30 40-46-12-30 34M120 180l-8 58-40 40-30 70M120 180l38 44 30-6 20 40M112 238l50 30 18 80 30 30M120 180l-60-80-10-60M120 180l50-90 40-20M112 238l-72-8M150 140l40-30" stroke-width="1.4" opacity=".9"/>
+            <path d="M120 180m-18 0a18 18 0 1 0 36 0a18 18 0 1 0-36 0M120 180m-42 4a42 40 0 1 0 84 0" stroke-width=".8" opacity=".55"/>
+          </g>
+          <defs>
+            <radialGradient id="hf-brilho" cx=".5" cy=".4" r=".7"><stop offset="0" stop-color="#6374CE" stop-opacity=".45"/><stop offset="1" stop-color="#06070C" stop-opacity="0"/></radialGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="hero-conteudo container">
+        <p class="etiqueta hero-etiqueta hero-anim">ASSISTÊNCIA TÉCNICA · CENTRO DE SÃO LOURENÇO DO SUL</p>
+        <h1 class="hero-titulo">
+          <span class="hero-linha1"><span class="hp hero-anim">Caiu?</span> <span class="hp hero-anim">Quebrou?</span> <span class="hp hero-anim">Molhou?</span></span>
+          <span class="hero-linha2 grad-texto hero-anim">A gente resolve.</span>
+          <span class="sr-only"> Conserto de celular em São Lourenço do Sul.</span>
+        </h1>
+        <p class="hero-sub hero-anim">Conserto de celular com peça de qualidade, preço justo e atendimento de verdade, na Rua Coronel Alfredo Born, 652.</p>
+        <div class="hero-botoes hero-anim">
+          <a class="btn btn-amarelo btn-grande magnetico" href="#orcamento" data-orcar>Pedir orçamento grátis <span aria-hidden="true">→</span></a>
+          <a class="btn btn-zap-contorno btn-grande magnetico" href="https://wa.me/5553991459101?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg class="ico-zap" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.8l4.8-1.3A9.8 9.8 0 1 0 12 2.2zm0 1.8a8 8 0 1 1-4.1 14.9l-.3-.2-2.8.8.8-2.7-.2-.3A8 8 0 0 1 12 4z"/><path d="M8.6 7.3c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.1-.2.3 0 .6.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.8.9c.3.1.4.2.5.3 0 .2 0 .9-.3 1.6-.3.7-1.6 1.4-2.2 1.4-.6.1-1.3.2-4.1-.9-3.4-1.4-5.5-4.9-5.7-5.1-.2-.2-1.3-1.8-1.3-3.4 0-1.6.8-2.4 1.1-2.7z"/></svg> Chamar no WhatsApp</a>
+        </div>
+        <ul class="hero-confianca hero-anim" aria-label="Por que confiar">
+          <li><span class="amarelo" aria-hidden="true">★</span> 5,0 no Google</li>
+          <li>Loja física no Centro</li>
+          <li>Buscamos e entregamos</li>
+        </ul>
+      </div>
+
+      <p class="hero-status etiqueta" aria-hidden="true"><span class="hs-bolinha"></span>OS #001 · STATUS: <b data-status>TELA QUEBRADA</b></p>
+      <p class="hero-rolar etiqueta" aria-hidden="true">ROLE PRA CONSERTAR <span>↓</span></p>
+    </section>
+
+    <!-- 3. Faixas infinitas -->
+    <div class="faixas" aria-hidden="true">
+      <div class="faixa faixa-a"><div class="faixa-trilho" data-dir="-1"><span>TROCA DE TELA ✦ BATERIA ✦ CONECTOR DE CARGA ✦ CÂMERA ✦ CELULAR MOLHADO ✦ SOFTWARE ✦ TRANSFERÊNCIA DE DADOS ✦ ALTO-FALANTE ✦ MICROFONE ✦ BOTÕES ✦&nbsp;</span><span>TROCA DE TELA ✦ BATERIA ✦ CONECTOR DE CARGA ✦ CÂMERA ✦ CELULAR MOLHADO ✦ SOFTWARE ✦ TRANSFERÊNCIA DE DADOS ✦ ALTO-FALANTE ✦ MICROFONE ✦ BOTÕES ✦&nbsp;</span></div></div>
+      <div class="faixa faixa-b"><div class="faixa-trilho" data-dir="1"><span>CAIU? QUEBROU? MOLHOU? ✦ O MUNDO DOS ELETRÔNICOS RESOLVE ✦ PREÇO JUSTO ✦ VEM PRO MUNDO 🌎 ✦&nbsp;</span><span>CAIU? QUEBROU? MOLHOU? ✦ O MUNDO DOS ELETRÔNICOS RESOLVE ✦ PREÇO JUSTO ✦ VEM PRO MUNDO 🌎 ✦&nbsp;</span></div></div>
+    </div>
+
+    <!-- 4. Serviços -->
+    <section class="servicos" id="servicos" data-tema="#06070C" aria-labelledby="t-servicos">
+      <div class="container">
+        <header class="sec-cabeca">
+          <p class="etiqueta">DIAGNÓSTICO 01 · O QUE TEM CONSERTO</p>
+          <h2 id="t-servicos" class="titulo" data-split>Tem conserto. E é aqui.</h2>
+        </header>
+
+        <div class="servicos-grid">
+          <!-- Celular em vista explodida: cada peça acende quando o serviço entra no centro da tela -->
+          <div class="servicos-celular" aria-hidden="true">
+            <svg viewBox="0 0 400 620" class="explodido" focusable="false">
+              <g class="peca peca-corpo"><rect x="100" y="100" width="200" height="420" rx="30"/></g>
+              <g class="peca" data-peca="placa" style="--dx:0px;--dy:0px">
+                <rect x="118" y="160" width="164" height="176" rx="10"/>
+                <path d="M130 190h40M130 205h28M240 180v40h30M240 300h-60v20M130 300h30v24M260 250h18" class="peca-trilha"/>
+                <circle cx="130" cy="190" r="3"/><circle cx="270" cy="220" r="3"/><circle cx="160" cy="324" r="3"/>
+              </g>
+              <g class="peca" data-peca="chip" style="--dx:-34px;--dy:-10px">
+                <rect x="176" y="214" width="52" height="52" rx="6"/>
+                <path d="M186 214v-8M198 214v-8M210 214v-8M222 214v-8M186 266v8M198 266v8M210 266v8M222 266v8" class="peca-trilha"/>
+                <text x="202" y="245" text-anchor="middle" class="peca-txt">CPU</text>
+              </g>
+              <g class="peca" data-peca="bateria" style="--dx:70px;--dy:24px">
+                <rect x="124" y="352" width="152" height="120" rx="12"/>
+                <path d="M190 412h20M200 402v20" class="peca-trilha"/>
+                <text x="200" y="452" text-anchor="middle" class="peca-txt">BATERIA</text>
+              </g>
+              <g class="peca" data-peca="conector" style="--dx:0px;--dy:46px">
+                <rect x="176" y="490" width="48" height="16" rx="8"/>
+                <path d="M186 498h28" class="peca-trilha"/>
+              </g>
+              <g class="peca" data-peca="camera" style="--dx:-40px;--dy:-46px">
+                <rect x="116" y="112" width="58" height="40" rx="12"/>
+                <circle cx="134" cy="132" r="11"/><circle cx="134" cy="132" r="5"/><circle cx="160" cy="126" r="6"/>
+              </g>
+              <g class="peca" data-peca="falante" style="--dx:0px;--dy:-40px">
+                <rect x="196" y="122" width="56" height="9" rx="4.5"/>
+                <circle cx="250" cy="498" r="3"/><circle cx="262" cy="498" r="3"/><circle cx="274" cy="498" r="3"/>
+              </g>
+              <g class="peca" data-peca="microfone" style="--dx:0px;--dy:40px">
+                <circle cx="146" cy="498" r="4"/><circle cx="134" cy="498" r="2"/>
+              </g>
+              <g class="peca" data-peca="botoes" style="--dx:36px;--dy:0px">
+                <rect x="300" y="190" width="9" height="56" rx="4"/><rect x="300" y="262" width="9" height="34" rx="4"/>
+              </g>
+              <g class="peca peca-extra" data-peca="gotas" style="--dx:0px;--dy:-10px">
+                <path d="M70 230c0 0-14 18-14 28a14 14 0 0 0 28 0c0-10-14-28-14-28zM330 330c0 0-10 13-10 20a10 10 0 0 0 20 0c0-7-10-20-10-20zM62 360c0 0-8 10-8 16a8 8 0 0 0 16 0c0-6-8-16-8-16z"/>
+              </g>
+              <g class="peca peca-extra" data-peca="cadeado" style="--dx:0px;--dy:0px">
+                <rect x="176" y="250" width="48" height="38" rx="8"/><path d="M186 250v-10a14 14 0 0 1 28 0v10" /><circle cx="200" cy="268" r="4"/>
+              </g>
+              <g class="peca peca-extra" data-peca="dados" style="--dx:0px;--dy:0px">
+                <rect x="318" y="120" width="70" height="128" rx="14"/>
+                <path d="M300 300c30 0 40-20 52-40" class="peca-trilha"/><path d="M344 262l8-4 2 9" class="peca-trilha"/>
+                <path d="M334 160h36M334 176h26M334 192h32" class="peca-trilha"/>
+              </g>
+              <g class="peca" data-peca="tela" style="--dx:-56px;--dy:-30px">
+                <rect x="88" y="88" width="200" height="420" rx="30" class="vidro"/>
+                <path d="M110 120l30 30M112 140l10 10" class="peca-trilha brilho-vidro"/>
+              </g>
+            </svg>
+            <p class="etiqueta servicos-os" aria-live="off">OS #<b data-os-num>01</b> · <span data-os-nome>TROCA DE TELA</span></p>
+          </div>
+
+          <ol class="servicos-lista">
+            <li class="servico" data-pecas="tela"><p class="etiqueta">OS #01</p><h3>Troca de tela</h3><p>Tela trincada, manchada ou touch falhando. Volta como novo.</p><a href="#orcamento" class="link-orcar" data-servico="Troca de tela">Orçar esse serviço <span aria-hidden="true">→</span></a></li>
+            <li class="servico" data-pecas="bateria"><p class="etiqueta">OS #02</p><h3>Bateria</h3><p>Descarrega rápido ou esquenta? Bateria nova, vida nova.</p><a href="#orcamento" class="link-orcar" data-servico="Bateria">Orçar esse serviço <span aria-hidden="true">→</span></a></li>
+            <li class="servico" data-pecas="conector"><p class="etiqueta">OS #03</p><h3>Conector de carga</h3><p>Só carrega numa posição? É o conector, e a gente troca.</p><a href="#orcamento" class="link-orcar" data-servico="Conector de carga">Orçar esse serviço <span aria-hidden="true">→</span></a></li>
+            <li class="servico" data-pecas="camera"><p class="etiqueta">OS #04</p><h3>Câmera e lente</h3><p>Lente quebrada não precisa estragar suas fotos.</p><a href="#orcamento" class="link-orcar" data-servico="Câmera/lente">Orçar esse serviço <span aria-hidden="true">→</span></a></li>
+            <li class="servico" data-pecas="placa gotas"><p class="etiqueta">OS #05</p><h3>Celular molhado</h3><p>Caiu na água? Não liga e traz rápido. Limpeza química especializada.</p><a href="#orcamento" class="link-orcar" data-servico="Celular molhado">Orçar esse serviço <span aria-hidden="true">→</span></a></li>
+            <li class="servico" data-pecas="falante microfone"><p class="etiqueta">OS #06</p><h3>Alto-falante e microfone</h3><p>Não te escutam na ligação? Resolvido.</p><a href="#orcamento" class="link-orcar" data-servico="Alto-falante/microfone">Orçar esse serviço <span aria-hidden="true">→</span></a></li>
+            <li class="servico" data-pecas="botoes"><p class="etiqueta">OS #07</p><h3>Botões</h3><p>Volume ou power afundado, travado ou sem resposta.</p><a href="#orcamento" class="link-orcar" data-servico="Botões">Orçar esse serviço <span aria-hidden="true">→</span></a></li>
+            <li class="servico" data-pecas="chip cadeado"><p class="etiqueta">OS #08</p><h3>Software e senha</h3><p>Travando, reiniciando sozinho ou esqueceu a senha? Vem que a gente resolve.</p><a href="#orcamento" class="link-orcar" data-servico="Software/senha">Orçar esse serviço <span aria-hidden="true">→</span></a></li>
+            <li class="servico" data-pecas="dados"><p class="etiqueta">OS #09</p><h3>Transferência de dados</h3><p>Trocou de celular? Passamos tudo pro novo, na hora.</p><a href="#orcamento" class="link-orcar" data-servico="Transferência de dados">Orçar esse serviço <span aria-hidden="true">→</span></a></li>
+          </ol>
+        </div>
+        <p class="servicos-nota">Também fazemos diagnóstico de superaquecimento. <a href="#orcamento" class="link-orcar" data-servico="Outro">Contar o problema <span aria-hidden="true">→</span></a></p>
+      </div>
+    </section>
+
+    <!-- 5. Antes e depois -->
+    <section class="antes-depois" data-tema="#0B0D18" aria-labelledby="t-ad">
+      <div class="container ad-grid">
+        <div class="ad-slider" style="--pos:35%">
+          <div class="ad-antes">
+            <picture><source type="image/avif" srcset="img/07-tela-quebrada-closeup-sm.avif 400w, img/07-tela-quebrada-closeup-lg.avif 640w" sizes="(min-width: 900px) 420px, 90vw"><source type="image/webp" srcset="img/07-tela-quebrada-closeup-sm.webp 400w, img/07-tela-quebrada-closeup-lg.webp 640w" sizes="(min-width: 900px) 420px, 90vw"><img src="img/07-tela-quebrada-closeup-lg.webp" width="640" height="1138" alt="Close de uma tela de celular trincada antes do conserto" loading="lazy" decoding="async"></picture>
+          </div>
+          <div class="ad-depois" aria-hidden="true">
+            <div class="ad-tela-nova">
+              <svg class="globo" viewBox="0 0 100 100" focusable="false"><g class="g-trilhas"><path d="M38.2 17.7C43.6 22.1 50.2 16.0 57.0 16" pathLength="1"/><path d="M27.4 23.4C38.5 27.0 51.9 22.0 69.0 22" pathLength="1"/><path d="M21.5 29.1C32.6 32.0 46.0 28.0 63.0 28" pathLength="1"/><path d="M17.8 34.8C34.3 36.9 54.2 34.0 81.0 34" pathLength="1"/><path d="M15.4 40.5C30.1 41.8 47.6 40.0 71.0 40" pathLength="1"/><path d="M14.2 46.2C33.2 46.7 55.9 46.0 87.0 46" pathLength="1"/><path d="M14.1 51.9C30.5 51.6 50.3 52.0 77.0 52" pathLength="1"/><path d="M14.9 57.6C28.7 56.6 45.2 58.0 67.0 58" pathLength="1"/><path d="M16.8 63.3C33.6 61.5 53.8 64.0 81.0 64" pathLength="1"/><path d="M20.1 69.0C33.1 66.4 48.6 70.0 69.0 70" pathLength="1"/><path d="M25.1 74.7C35.3 71.3 47.6 76.0 63.0 76" pathLength="1"/><path d="M33.5 80.4C39.6 76.2 47.0 82.0 55.0 82" pathLength="1"/></g><g class="g-nos"><circle cx="60" cy="16" r="2.3" class="g-anel"/><circle cx="70.5" cy="22" r="1.6" class="g-ponto"/><circle cx="66" cy="28" r="2.3" class="g-anel"/><circle cx="84" cy="34" r="2.3" class="g-anel"/><circle cx="72.5" cy="40" r="1.6" class="g-ponto"/><circle cx="90" cy="46" r="2.3" class="g-anel"/><circle cx="80" cy="52" r="2.3" class="g-anel"/><circle cx="68.5" cy="58" r="1.6" class="g-ponto"/><circle cx="84" cy="64" r="2.3" class="g-anel"/><circle cx="70.5" cy="70" r="1.6" class="g-ponto"/><circle cx="66" cy="76" r="2.3" class="g-anel"/><circle cx="58" cy="82" r="2.3" class="g-anel"/><circle cx="40" cy="25" r="1.5" class="g-ponto"/><circle cx="34" cy="43" r="1.5" class="g-ponto"/><circle cx="44" cy="55" r="1.5" class="g-ponto"/><circle cx="38" cy="67" r="1.5" class="g-ponto"/><circle cx="52" cy="37" r="1.5" class="g-ponto"/><circle cx="56" cy="61" r="1.5" class="g-ponto"/></g></svg>
+              <span class="ad-mundo">Mundo</span>
+              <span class="etiqueta">STATUS: CONSERTADO ✓</span>
+            </div>
+          </div>
+          <span class="etiqueta ad-tag ad-tag-antes">ANTES</span>
+          <span class="etiqueta ad-tag ad-tag-depois">DEPOIS</span>
+          <span class="ad-alca" aria-hidden="true"><span>⟷</span></span>
+          <label class="sr-only" for="ad-range">Arraste pra comparar antes e depois do conserto</label>
+          <input id="ad-range" class="ad-range" type="range" min="0" max="100" value="35">
+        </div>
+        <div class="ad-texto">
+          <p class="etiqueta">OS #001 · TROCA DE TELA</p>
+          <h2 id="t-ad" class="titulo" data-split>Aquele celular que quase não tinha mais esperança? Novo de novo.</h2>
+          <p class="suave">Arraste a alça e veja a diferença.</p>
+          <a href="#orcamento" class="btn btn-amarelo magnetico link-orcar" data-servico="Troca de tela">Orçar minha tela</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Como funciona -->
+    <section class="como" id="como-funciona" data-tema="#0B0D18" aria-labelledby="t-como">
+      <div class="container como-grid">
+        <div class="como-texto">
+          <p class="etiqueta">PASSO A PASSO · SEM ENROLAÇÃO</p>
+          <h2 id="t-como" class="titulo" data-split>Simples assim.</h2>
+          <div class="passos-wrap">
+          <svg class="passos-trilha" viewBox="0 0 20 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M10 0V100" class="pt-base"/><path d="M10 0V100" class="pt-linha" pathLength="1"/></svg>
+          <ol class="passos">
+            <li class="passo"><span class="passo-no" aria-hidden="true">1</span><div><h3>Chama no WhatsApp ou passa na loja.</h3><p>Rua Coronel Alfredo Born, 652, Centro.</p></div></li>
+            <li class="passo"><span class="passo-no" aria-hidden="true">2</span><div><h3>Diagnóstico e orçamento sem compromisso.</h3><p>Você sabe o valor antes de qualquer coisa.</p></div></li>
+            <li class="passo"><span class="passo-no" aria-hidden="true">3</span><div><h3>Celular de volta, funcionando.</h3><p>Com qualidade e preço justo.</p></div></li>
+          </ol>
+          </div>
+        </div>
+        <figure class="como-foto mascara">
+          <picture><source type="image/avif" srcset="img/05-tecnico-na-bancada-2-sm.avif 400w, img/05-tecnico-na-bancada-2-lg.avif 540w" sizes="(min-width: 900px) 40vw, 90vw"><source type="image/webp" srcset="img/05-tecnico-na-bancada-2-sm.webp 400w, img/05-tecnico-na-bancada-2-lg.webp 540w" sizes="(min-width: 900px) 40vw, 90vw"><img src="img/05-tecnico-na-bancada-2-lg.webp" width="540" height="960" alt="Técnico da Mundo dos Eletrônicos abrindo um celular na bancada de conserto" loading="lazy" decoding="async"></picture>
+          <figcaption class="etiqueta">BANCADA · DIAGNÓSTICO EM ANDAMENTO</figcaption>
+        </figure>
+      </div>
+
+      <div class="container">
+        <div class="entrega">
+          <div class="entrega-pista" aria-hidden="true">
+            <svg class="entrega-linha" viewBox="0 0 1000 40" preserveAspectRatio="none" focusable="false"><path d="M0 20H1000"/></svg>
+            <div class="moto">
+              <svg viewBox="0 0 96 60" focusable="false">
+                <rect x="6" y="6" width="26" height="22" rx="4" class="moto-caixa"/>
+                <path d="M30 34h22l10-14h10M52 34l8 10M40 34l-6 10" class="moto-traco"/>
+                <path d="M62 20l6-8h8" class="moto-traco"/>
+                <circle cx="20" cy="44" r="11" class="moto-roda"/><circle cx="78" cy="44" r="11" class="moto-roda"/>
+                <circle cx="20" cy="44" r="3" class="moto-eixo"/><circle cx="78" cy="44" r="3" class="moto-eixo"/>
+              </svg>
+            </div>
+          </div>
+          <div class="entrega-texto">
+            <p class="etiqueta">MOTOBOY · BUSCA E ENTREGA</p>
+            <h3 class="titulo-m">Não pode ir até a loja? A gente busca e entrega.</h3>
+            <p class="suave">Buscamos e entregamos seu celular no conforto da sua casa.</p>
+          </div>
+          <a href="#orcamento" class="btn btn-amarelo magnetico" data-preferencia="Quero busca e entrega" data-orcar>Pedir busca e entrega</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. A loja -->
+    <section class="loja" id="loja" data-tema="#06070C" aria-labelledby="t-loja">
+      <div class="loja-pin">
+        <div class="container loja-cabeca">
+          <p class="etiqueta">BALCÃO · ACESSÓRIOS E ELETRÔNICOS</p>
+          <h2 id="t-loja" class="titulo" data-split>Além do conserto, tudo pro seu celular.</h2>
+        </div>
+        <div class="loja-trilho" tabindex="0" aria-label="Produtos da loja, role para o lado">
+          <ul class="loja-cards">
+            <li class="card-prod tilt">
+              <div class="card-img"><picture><source type="image/avif" srcset="img/10-produtos-capinhas-sm.avif 400w, img/10-produtos-capinhas-lg.avif 640w" sizes="(min-width: 1024px) 26vw, 72vw"><source type="image/webp" srcset="img/10-produtos-capinhas-sm.webp 400w, img/10-produtos-capinhas-lg.webp 640w" sizes="(min-width: 1024px) 26vw, 72vw"><img src="img/10-produtos-capinhas-lg.webp" width="640" height="1136" alt="Capinhas coloridas de celular à venda na loja Mundo dos Eletrônicos" loading="lazy" decoding="async"></picture></div>
+              <div class="card-info"><p class="etiqueta">PRATELEIRA 01</p><h3>Capas e capinhas</h3>
+                <a class="link-zap" target="_blank" rel="noopener" href="https://wa.me/5553991459101?text=Ol%C3%A1!%20Voc%C3%AAs%20t%C3%AAm%20capinha%20pro%20meu%20celular%3F">Perguntar se tem pro meu modelo →</a></div>
+            </li>
+            <li class="card-prod tilt">
+              <div class="card-img"><picture><source type="image/avif" srcset="img/11-produtos-peliculas-sm.avif 400w, img/11-produtos-peliculas-lg.avif 640w" sizes="(min-width: 1024px) 26vw, 72vw"><source type="image/webp" srcset="img/11-produtos-peliculas-sm.webp 400w, img/11-produtos-peliculas-lg.webp 640w" sizes="(min-width: 1024px) 26vw, 72vw"><img src="img/11-produtos-peliculas-lg.webp" width="640" height="1136" alt="Películas para celular, inclusive película 3D, na Mundo dos Eletrônicos" loading="lazy" decoding="async"></picture></div>
+              <div class="card-info"><p class="etiqueta">PRATELEIRA 02</p><h3>Películas, inclusive 3D</h3>
+                <a class="link-zap" target="_blank" rel="noopener" href="https://wa.me/5553991459101?text=Ol%C3%A1!%20Voc%C3%AAs%20t%C3%AAm%20pel%C3%ADcula%20pro%20meu%20celular%3F">Perguntar se tem pro meu modelo →</a></div>
+            </li>
+            <li class="card-prod tilt">
+              <div class="card-img"><picture><source type="image/avif" srcset="img/09-produtos-carregadores-sm.avif 400w, img/09-produtos-carregadores-lg.avif 640w" sizes="(min-width: 1024px) 26vw, 72vw"><source type="image/webp" srcset="img/09-produtos-carregadores-sm.webp 400w, img/09-produtos-carregadores-lg.webp 640w" sizes="(min-width: 1024px) 26vw, 72vw"><img src="img/09-produtos-carregadores-lg.webp" width="640" height="1136" alt="Carregadores turbo tipo C na prateleira da loja de acessórios para celular em São Lourenço do Sul" loading="lazy" decoding="async"></picture></div>
+              <div class="card-info"><p class="etiqueta">PRATELEIRA 03</p><h3>Carregadores, cabos e fontes</h3>
+                <a class="link-zap" target="_blank" rel="noopener" href="https://wa.me/5553991459101?text=Ol%C3%A1!%20Voc%C3%AAs%20t%C3%AAm%20carregador%20pro%20meu%20celular%3F">Perguntar se tem pro meu modelo →</a></div>
+            </li>
+            <li class="card-prod tilt">
+              <div class="card-img"><picture><source type="image/avif" srcset="img/13-interior-loja-prateleiras-sm.avif 400w, img/13-interior-loja-prateleiras-lg.avif 640w" sizes="(min-width: 1024px) 26vw, 72vw"><source type="image/webp" srcset="img/13-interior-loja-prateleiras-sm.webp 400w, img/13-interior-loja-prateleiras-lg.webp 640w" sizes="(min-width: 1024px) 26vw, 72vw"><img src="img/13-interior-loja-prateleiras-lg.webp" width="640" height="1136" alt="Interior da loja com prateleiras de acessórios e eletrônicos" loading="lazy" decoding="async"></picture></div>
+              <div class="card-info"><p class="etiqueta">PRATELEIRA 04</p><h3>Acessórios e eletrônicos</h3>
+                <a class="link-zap" target="_blank" rel="noopener" href="https://wa.me/5553991459101?text=Ol%C3%A1!%20Voc%C3%AAs%20t%C3%AAm%20fone%2C%20suporte%20ou%20smartwatch%3F">Perguntar o que tem →</a></div>
+            </li>
+            <li class="card-prod card-destaque tilt">
+              <div class="card-arte" aria-hidden="true">
+                <svg viewBox="0 0 120 200" focusable="false"><rect x="20" y="10" width="80" height="170" rx="14"/><rect x="28" y="18" width="64" height="150" rx="8" class="arte-tela"/><path d="M44 96l12 12 22-26" class="arte-check"/></svg>
+              </div>
+              <div class="card-info"><p class="etiqueta">SEMINOVOS · COM GARANTIA</p><h3>Celulares seminovos revisados</h3><p class="suave">Revisados e com garantia. O estoque muda, pergunte o que tem hoje.</p>
+                <a class="link-zap" target="_blank" rel="noopener" href="https://wa.me/5553991459101?text=Ol%C3%A1!%20Quais%20celulares%20seminovos%20voc%C3%AAs%20t%C3%AAm%20no%20momento%3F">Ver o que tem agora →</a></div>
+            </li>
+            <li class="card-prod card-games tilt">
+              <div class="card-arte" aria-hidden="true">
+                <svg viewBox="0 0 200 140" focusable="false"><path d="M50 40h100c22 0 36 20 40 50 3 24-14 34-28 22l-18-16H56L38 112c-14 12-31 2-28-22 4-30 18-50 40-50z"/><path d="M58 64v24M46 76h24" class="arte-check"/><circle cx="138" cy="68" r="5" class="arte-ponto"/><circle cx="152" cy="82" r="5" class="arte-ponto"/></svg>
+              </div>
+              <div class="card-info"><p class="etiqueta">SEMINOVOS · COM GARANTIA</p><h3>Video games seminovos</h3><p class="suave">Revisados e com garantia.</p>
+                <a class="link-zap" target="_blank" rel="noopener" href="https://wa.me/5553991459101?text=Ol%C3%A1!%20Quais%20video%20games%20seminovos%20voc%C3%AAs%20t%C3%AAm%3F">Perguntar disponibilidade →</a></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Quem faz -->
+    <section class="quem" data-tema="#0B0D18" aria-labelledby="t-quem">
+      <div class="container quem-grid">
+        <div class="quem-fotos">
+          <figure class="quem-foto-grande mascara">
+            <div class="parallax"><picture><source type="image/avif" srcset="img/04-tecnico-na-bancada-1-sm.avif 400w, img/04-tecnico-na-bancada-1-lg.avif 640w" sizes="(min-width: 900px) 40vw, 90vw"><source type="image/webp" srcset="img/04-tecnico-na-bancada-1-sm.webp 400w, img/04-tecnico-na-bancada-1-lg.webp 640w" sizes="(min-width: 900px) 40vw, 90vw"><img src="img/04-tecnico-na-bancada-1-lg.webp" width="640" height="1136" alt="Taiferson Porto, técnico da Mundo dos Eletrônicos, consertando um celular na bancada" loading="lazy" decoding="async"></picture></div>
+          </figure>
+          <figure class="quem-foto-equipe">
+            <picture><source type="image/avif" srcset="img/08-equipe-da-loja-sm.avif 400w, img/08-equipe-da-loja-lg.avif 540w" sizes="(min-width: 900px) 18vw, 44vw"><source type="image/webp" srcset="img/08-equipe-da-loja-sm.webp 400w, img/08-equipe-da-loja-lg.webp 540w" sizes="(min-width: 900px) 18vw, 44vw"><img src="img/08-equipe-da-loja-lg.webp" width="540" height="960" alt="A equipe da Mundo dos Eletrônicos no balcão da loja" loading="lazy" decoding="async"></picture>
+            <figcaption class="etiqueta">A EQUIPE · TOCADA EM FAMÍLIA</figcaption>
+          </figure>
+        </div>
+        <div class="quem-texto">
+          <p class="etiqueta">TÉCNICO RESPONSÁVEL</p>
+          <h2 id="t-quem" class="titulo" data-split>Quem cuida do seu celular.</h2>
+          <p class="quem-bio">Prazer, <strong>Taiferson Porto</strong>. Mais de 5 anos consertando celulares e tablets. A Mundo dos Eletrônicos começou em 2022 e hoje tem loja física no centro de São Lourenço do Sul, tocada em família, com o compromisso de sempre: qualidade no serviço e preço justo.</p>
+          <dl class="numeros">
+            <div><dt class="sr-only">Experiência</dt><dd><span class="num">+<b data-contar="5">5</b></span><span class="num-leg">anos de bancada</span></dd></div>
+            <div><dt class="sr-only">Fundação</dt><dd class="rev"><span class="num"><b data-contar="2022" data-de="2000">2022</b></span><span class="num-leg">desde</span></dd></div>
+            <div><dt class="sr-only">Nota no Google</dt><dd><span class="num amarelo"><b data-contar="5" data-casas="1">5,0</b></span><span class="num-leg">no Google</span></dd></div>
+          </dl>
+          <figure class="cuias">
+            <picture><source type="image/avif" srcset="img/12-cuias-chimarrao-com-a-marca-sm.avif 400w, img/12-cuias-chimarrao-com-a-marca-lg.avif 720w" sizes="180px"><source type="image/webp" srcset="img/12-cuias-chimarrao-com-a-marca-sm.webp 400w, img/12-cuias-chimarrao-com-a-marca-lg.webp 720w" sizes="180px"><img src="img/12-cuias-chimarrao-com-a-marca-lg.webp" width="720" height="960" alt="Cuias de chimarrão com o logo da Mundo dos Eletrônicos gravado" loading="lazy" decoding="async"></picture>
+            <figcaption class="etiqueta">O CHIMARRÃO TÁ SEMPRE PRONTO</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Avaliações -->
+    <section class="avaliacoes" id="avaliacoes" data-tema="#06070C" aria-labelledby="t-aval">
+      <div class="container aval-grid">
+        <div class="aval-nota">
+          <p class="etiqueta">GOOGLE · AVALIAÇÕES REAIS</p>
+          <h2 id="t-aval" class="sr-only">Avaliações no Google</h2>
+          <p class="nota-gigante" aria-label="Nota 5,0 de 5"><span data-contar="5" data-casas="1">5,0</span></p>
+          <div class="estrelas" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg>
+          </div>
+          <p class="suave">8 avaliações no Google</p>
+          <div class="aval-botoes">
+            <!-- CONFIRMAR: link do perfil no Maps (trocar a busca abaixo pelo link direto do perfil) -->
+            <a class="btn btn-contorno magnetico" href="https://www.google.com/maps/search/?api=1&amp;query=Mundo%20dos%20Eletr%C3%B4nicos%20Rua%20Coronel%20Alfredo%20Born%20652%20S%C3%A3o%20Louren%C3%A7o%20do%20Sul" target="_blank" rel="noopener">Ver no Google</a>
+            <!-- CONFIRMAR: link "escrever avaliação" (https://search.google.com/local/writereview?placeid=PLACE_ID) -->
+            <a class="btn btn-contorno magnetico" href="https://www.google.com/maps/search/?api=1&amp;query=Mundo%20dos%20Eletr%C3%B4nicos%20Rua%20Coronel%20Alfredo%20Born%20652%20S%C3%A3o%20Louren%C3%A7o%20do%20Sul" target="_blank" rel="noopener">Deixar minha avaliação</a>
+          </div>
+        </div>
+        <ul class="aval-cards">
+          <li class="aval-card" style="--r:-2deg"><p class="aval-estrelas" aria-label="5 estrelas">★★★★★</p><blockquote>“Loja bem localizada, produtos de qualidade, bom atendimento 😃”</blockquote><p class="etiqueta">CLIENTE NO GOOGLE</p></li>
+          <li class="aval-card" style="--r:1.5deg"><p class="aval-estrelas" aria-label="5 estrelas">★★★★★</p><blockquote>“Atendimento top e preços excelentes!”</blockquote><p class="etiqueta">CLIENTE NO GOOGLE</p></li>
+          <li class="aval-card" style="--r:-1deg"><p class="aval-estrelas" aria-label="5 estrelas">★★★★★</p><blockquote>“Ótimo atendimento, sempre de bom humor, clareza e atenção.”</blockquote><p class="etiqueta">CLIENTE NO GOOGLE</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 10. Visite a loja -->
+    <section class="visite" id="onde-estamos" data-tema="#0B0D18" aria-labelledby="t-visite">
+      <div class="container visite-grid">
+        <div class="visite-texto">
+          <p class="etiqueta">ONDE ESTAMOS · CENTRO</p>
+          <h2 id="t-visite" class="titulo visite-titulo"><span data-split>Vem pro Mundo.</span> <svg class="globo globo-gira" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g class="g-trilhas"><path d="M38.2 17.7C43.6 22.1 50.2 16.0 57.0 16" pathLength="1"/><path d="M27.4 23.4C38.5 27.0 51.9 22.0 69.0 22" pathLength="1"/><path d="M21.5 29.1C32.6 32.0 46.0 28.0 63.0 28" pathLength="1"/><path d="M17.8 34.8C34.3 36.9 54.2 34.0 81.0 34" pathLength="1"/><path d="M15.4 40.5C30.1 41.8 47.6 40.0 71.0 40" pathLength="1"/><path d="M14.2 46.2C33.2 46.7 55.9 46.0 87.0 46" pathLength="1"/><path d="M14.1 51.9C30.5 51.6 50.3 52.0 77.0 52" pathLength="1"/><path d="M14.9 57.6C28.7 56.6 45.2 58.0 67.0 58" pathLength="1"/><path d="M16.8 63.3C33.6 61.5 53.8 64.0 81.0 64" pathLength="1"/><path d="M20.1 69.0C33.1 66.4 48.6 70.0 69.0 70" pathLength="1"/><path d="M25.1 74.7C35.3 71.3 47.6 76.0 63.0 76" pathLength="1"/><path d="M33.5 80.4C39.6 76.2 47.0 82.0 55.0 82" pathLength="1"/></g><g class="g-nos"><circle cx="60" cy="16" r="2.3" class="g-anel"/><circle cx="70.5" cy="22" r="1.6" class="g-ponto"/><circle cx="66" cy="28" r="2.3" class="g-anel"/><circle cx="84" cy="34" r="2.3" class="g-anel"/><circle cx="72.5" cy="40" r="1.6" class="g-ponto"/><circle cx="90" cy="46" r="2.3" class="g-anel"/><circle cx="80" cy="52" r="2.3" class="g-anel"/><circle cx="68.5" cy="58" r="1.6" class="g-ponto"/><circle cx="84" cy="64" r="2.3" class="g-anel"/><circle cx="70.5" cy="70" r="1.6" class="g-ponto"/><circle cx="66" cy="76" r="2.3" class="g-anel"/><circle cx="58" cy="82" r="2.3" class="g-anel"/><circle cx="40" cy="25" r="1.5" class="g-ponto"/><circle cx="34" cy="43" r="1.5" class="g-ponto"/><circle cx="44" cy="55" r="1.5" class="g-ponto"/><circle cx="38" cy="67" r="1.5" class="g-ponto"/><circle cx="52" cy="37" r="1.5" class="g-ponto"/><circle cx="56" cy="61" r="1.5" class="g-ponto"/></g></svg></h2>
+          <address class="endereco">
+            <span class="end-rua">Rua Coronel Alfredo Born,</span>
+            <span class="end-num">652</span>
+            <span class="end-resto">Centro · São Lourenço do Sul, RS · CEP 96170-000</span>
+          </address>
+          <div class="horario">
+            <p class="status-loja" data-status-loja><span class="bolinha" aria-hidden="true"></span><span data-status-texto>Abre às 08:30</span></p>
+            <!-- CONFIRMAR COM O CLIENTE: horário completo de seg a sáb (editar também HORARIOS em js/main.js) -->
+            <p class="suave">Abre às <b class="hora-grande">08:30</b></p>
+          </div>
+          <div class="visite-botoes">
+            <a class="btn btn-amarelo magnetico" href="https://www.google.com/maps/dir/?api=1&amp;destination=Rua%20Coronel%20Alfredo%20Born%2C%20652%2C%20Centro%2C%20S%C3%A3o%20Louren%C3%A7o%20do%20Sul%20-%20RS%2C%2096170-000" target="_blank" rel="noopener">Como chegar</a>
+            <a class="btn btn-contorno magnetico" href="tel:+5553991459101">Ligar (53) 99145-9101</a>
+          </div>
+        </div>
+        <figure class="visite-foto mascara">
+          <picture><source type="image/avif" srcset="img/01-fachada-da-loja-sm.avif 400w, img/01-fachada-da-loja-lg.avif 640w" sizes="(min-width: 900px) 30vw, 90vw"><source type="image/webp" srcset="img/01-fachada-da-loja-sm.webp 400w, img/01-fachada-da-loja-lg.webp 640w" sizes="(min-width: 900px) 30vw, 90vw"><img src="img/01-fachada-da-loja-lg.webp" width="640" height="1138" alt="Fachada da Mundo dos Eletrônicos, assistência técnica de celular na Rua Coronel Alfredo Born, 652, em São Lourenço do Sul" loading="lazy" decoding="async"></picture>
+        </figure>
+        <div class="mapa">
+          <iframe title="Mapa da Mundo dos Eletrônicos em São Lourenço do Sul" src="https://www.google.com/maps?q=Rua%20Coronel%20Alfredo%20Born%2C%20652%2C%20S%C3%A3o%20Louren%C3%A7o%20do%20Sul%20-%20RS&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Perguntas frequentes -->
+    <section class="faq" data-tema="#06070C" aria-labelledby="t-faq">
+      <div class="container faq-grid">
+        <header class="sec-cabeca">
+          <p class="etiqueta">DÚVIDAS · RESPOSTA CURTA</p>
+          <h2 id="t-faq" class="titulo" data-split>Perguntas frequentes.</h2>
+        </header>
+        <div class="faq-lista">
+          <div class="faq-item"><h3><button type="button" aria-expanded="false" aria-controls="faq-1" id="faq-b1">Vocês fazem orçamento sem compromisso?<span class="faq-mais" aria-hidden="true"></span></button></h3><div class="faq-resp" id="faq-1" role="region" aria-labelledby="faq-b1"><div><p>Sim. Você chama no WhatsApp ou passa na loja e a gente avalia o aparelho.</p></div></div></div>
+          <!-- CONFIRMAR: prazo médio dos consertos -->
+          <div class="faq-item"><h3><button type="button" aria-expanded="false" aria-controls="faq-2" id="faq-b2">Quanto tempo demora o conserto?<span class="faq-mais" aria-hidden="true"></span></button></h3><div class="faq-resp" id="faq-2" role="region" aria-labelledby="faq-b2"><div><p>Depende do modelo e do serviço. Muitos consertos ficam prontos rápido; no orçamento a gente já te passa o prazo.</p></div></div></div>
+          <div class="faq-item"><h3><button type="button" aria-expanded="false" aria-controls="faq-3" id="faq-b3">Vocês buscam o celular em casa?<span class="faq-mais" aria-hidden="true"></span></button></h3><div class="faq-resp" id="faq-3" role="region" aria-labelledby="faq-b3"><div><p>Sim, temos serviço de busca e entrega com motoboy.</p></div></div></div>
+          <div class="faq-item"><h3><button type="button" aria-expanded="false" aria-controls="faq-4" id="faq-b4">Meu celular caiu na água, o que eu faço?<span class="faq-mais" aria-hidden="true"></span></button></h3><div class="faq-resp" id="faq-4" role="region" aria-labelledby="faq-b4"><div><p>Não tente ligar nem carregar. Traz o quanto antes pra limpeza química.</p></div></div></div>
+          <div class="faq-item"><h3><button type="button" aria-expanded="false" aria-controls="faq-5" id="faq-b5">Vocês passam os dados pro celular novo?<span class="faq-mais" aria-hidden="true"></span></button></h3><div class="faq-resp" id="faq-5" role="region" aria-labelledby="faq-b5"><div><p>Sim, a gente faz a transferência na hora.</p></div></div></div>
+          <div class="faq-item"><h3><button type="button" aria-expanded="false" aria-controls="faq-6" id="faq-b6">Vocês vendem celular?<span class="faq-mais" aria-hidden="true"></span></button></h3><div class="faq-resp" id="faq-6" role="region" aria-labelledby="faq-b6"><div><p>Temos seminovos revisados e com garantia. Chama no WhatsApp pra ver o que tem no momento.</p></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. Formulário de orçamento -->
+    <section class="orcamento" id="orcamento" data-tema="#0B0D18" aria-labelledby="t-orc">
+      <svg class="orc-trilhas" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+        <path pathLength="1" d="M0 52H360l40 30H600"/>
+        <path pathLength="1" d="M0 70H240l30 26H420"/>
+        <path pathLength="1" d="M0 868H380l40-34H600"/>
+        <path pathLength="1" d="M1200 140H1150l-40 40H1100"/>
+        <path pathLength="1" d="M1200 470H1140l-30 30H1100"/>
+        <path pathLength="1" d="M1200 800H1150l-40-40H1100"/>
+        <path pathLength="1" d="M600 0V82"/>
+        <path pathLength="1" d="M760 900V834"/>
+      </svg>
+      <div class="container orc-grid">
+        <header class="orc-cabeca">
+          <p class="etiqueta">ORDEM DE SERVIÇO · NOVA</p>
+          <h2 id="t-orc" class="titulo" data-split>Conta o que aconteceu. A gente responde no WhatsApp.</h2>
+          <p class="suave">Leva menos de um minuto. Orçamento sem compromisso.</p>
+        </header>
+
+        <form class="form-orc" id="form-orc" novalidate>
+          <div class="form-corpo">
+            <div class="campo" data-campo="nome">
+              <label for="f-nome">Seu nome <span class="obrig">*</span></label>
+              <input id="f-nome" name="nome" type="text" autocomplete="name" required maxlength="60" aria-describedby="erro-nome">
+              <p class="erro" id="erro-nome" aria-live="polite"></p>
+            </div>
+
+            <fieldset class="campo" data-campo="servico" aria-describedby="erro-servico">
+              <legend>Qual serviço você precisa? <span class="obrig">*</span></legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="servico" value="Troca de tela" required><span>Troca de tela</span></label>
+                <label class="chip"><input type="radio" name="servico" value="Bateria"><span>Bateria</span></label>
+                <label class="chip"><input type="radio" name="servico" value="Conector de carga"><span>Conector de carga</span></label>
+                <label class="chip"><input type="radio" name="servico" value="Câmera/lente"><span>Câmera/lente</span></label>
+                <label class="chip"><input type="radio" name="servico" value="Celular molhado"><span>Celular molhado</span></label>
+                <label class="chip"><input type="radio" name="servico" value="Alto-falante/microfone"><span>Alto-falante/microfone</span></label>
+                <label class="chip"><input type="radio" name="servico" value="Botões"><span>Botões</span></label>
+                <label class="chip"><input type="radio" name="servico" value="Software/senha"><span>Software/senha</span></label>
+                <label class="chip"><input type="radio" name="servico" value="Transferência de dados"><span>Transferência de dados</span></label>
+                <label class="chip"><input type="radio" name="servico" value="Comprar acessório"><span>Comprar acessório</span></label>
+                <label class="chip"><input type="radio" name="servico" value="Celular/video game seminovo"><span>Celular/video game seminovo</span></label>
+                <label class="chip"><input type="radio" name="servico" value="Outro"><span>Outro</span></label>
+              </div>
+              <p class="erro" id="erro-servico" aria-live="polite"></p>
+            </fieldset>
+
+            <div class="campo">
+              <label for="f-modelo">Modelo do celular <span class="opc">(opcional)</span></label>
+              <input id="f-modelo" name="modelo" type="text" maxlength="60" placeholder="Ex.: iPhone 11, Galaxy A15, Moto G54">
+            </div>
+
+            <div class="campo">
+              <label for="f-detalhes">Quer contar mais alguma coisa? <span class="opc">(opcional)</span></label>
+              <textarea id="f-detalhes" name="detalhes" rows="3" maxlength="300" aria-describedby="contador"></textarea>
+              <p class="contador etiqueta" id="contador"><span data-contador>0</span>/300</p>
+            </div>
+
+            <fieldset class="campo">
+              <legend>Como prefere?</legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="preferencia" value="Levo na loja"><span>Levo na loja</span></label>
+                <label class="chip"><input type="radio" name="preferencia" value="Quero busca e entrega"><span>Quero busca e entrega</span></label>
+              </div>
+            </fieldset>
+
+            <button class="btn btn-zap-cheio btn-enviar magnetico" type="submit"><svg class="ico-zap" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.8l4.8-1.3A9.8 9.8 0 1 0 12 2.2zm0 1.8a8 8 0 1 1-4.1 14.9l-.3-.2-2.8.8.8-2.7-.2-.3A8 8 0 0 1 12 4z"/><path d="M8.6 7.3c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.1-.2.3 0 .6.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.8.9c.3.1.4.2.5.3 0 .2 0 .9-.3 1.6-.3.7-1.6 1.4-2.2 1.4-.6.1-1.3.2-4.1-.9-3.4-1.4-5.5-4.9-5.7-5.1-.2-.2-1.3-1.8-1.3-3.4 0-1.6.8-2.4 1.1-2.7z"/></svg> Enviar pelo WhatsApp</button>
+            <p class="form-nota suave">Abre o WhatsApp com a mensagem pronta pro (53) 99145-9101.</p>
+          </div>
+
+          <div class="form-sucesso" role="status" aria-live="polite" hidden>
+            <svg viewBox="0 0 80 80" aria-hidden="true" focusable="false"><circle cx="40" cy="40" r="34" pathLength="1"/><path d="M25 41l10 10 21-23" pathLength="1"/></svg>
+            <p class="etiqueta">STATUS: ENVIADO ✓</p>
+            <p class="sucesso-titulo">Abrimos seu WhatsApp. É só tocar em enviar 🚀</p>
+            <p class="suave">Não abriu? <a data-link-zap href="https://wa.me/5553991459101" target="_blank" rel="noopener">Toque aqui</a>.</p>
+            <button type="button" class="btn btn-contorno" data-novo-orc>Fazer outro pedido</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- 13. Rodapé -->
+  <footer class="rodape" data-tema="#06070C">
+    <div class="container rodape-grid">
+      <div class="rodape-marca">
+        <a class="logo" href="#inicio" aria-label="Mundo dos Eletrônicos, voltar ao início">
+          <svg class="globo" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g class="g-trilhas"><path d="M38.2 17.7C43.6 22.1 50.2 16.0 57.0 16" pathLength="1"/><path d="M27.4 23.4C38.5 27.0 51.9 22.0 69.0 22" pathLength="1"/><path d="M21.5 29.1C32.6 32.0 46.0 28.0 63.0 28" pathLength="1"/><path d="M17.8 34.8C34.3 36.9 54.2 34.0 81.0 34" pathLength="1"/><path d="M15.4 40.5C30.1 41.8 47.6 40.0 71.0 40" pathLength="1"/><path d="M14.2 46.2C33.2 46.7 55.9 46.0 87.0 46" pathLength="1"/><path d="M14.1 51.9C30.5 51.6 50.3 52.0 77.0 52" pathLength="1"/><path d="M14.9 57.6C28.7 56.6 45.2 58.0 67.0 58" pathLength="1"/><path d="M16.8 63.3C33.6 61.5 53.8 64.0 81.0 64" pathLength="1"/><path d="M20.1 69.0C33.1 66.4 48.6 70.0 69.0 70" pathLength="1"/><path d="M25.1 74.7C35.3 71.3 47.6 76.0 63.0 76" pathLength="1"/><path d="M33.5 80.4C39.6 76.2 47.0 82.0 55.0 82" pathLength="1"/></g><g class="g-nos"><circle cx="60" cy="16" r="2.3" class="g-anel"/><circle cx="70.5" cy="22" r="1.6" class="g-ponto"/><circle cx="66" cy="28" r="2.3" class="g-anel"/><circle cx="84" cy="34" r="2.3" class="g-anel"/><circle cx="72.5" cy="40" r="1.6" class="g-ponto"/><circle cx="90" cy="46" r="2.3" class="g-anel"/><circle cx="80" cy="52" r="2.3" class="g-anel"/><circle cx="68.5" cy="58" r="1.6" class="g-ponto"/><circle cx="84" cy="64" r="2.3" class="g-anel"/><circle cx="70.5" cy="70" r="1.6" class="g-ponto"/><circle cx="66" cy="76" r="2.3" class="g-anel"/><circle cx="58" cy="82" r="2.3" class="g-anel"/><circle cx="40" cy="25" r="1.5" class="g-ponto"/><circle cx="34" cy="43" r="1.5" class="g-ponto"/><circle cx="44" cy="55" r="1.5" class="g-ponto"/><circle cx="38" cy="67" r="1.5" class="g-ponto"/><circle cx="52" cy="37" r="1.5" class="g-ponto"/><circle cx="56" cy="61" r="1.5" class="g-ponto"/></g></svg>
+          <span class="logo-txt"><span class="logo-mundo">Mundo</span><span class="logo-dos">Dos Eletrônicos</span></span>
+        </a>
+        <p class="suave">Assistência técnica de celulares no centro de São Lourenço do Sul.</p>
+      </div>
+      <div>
+        <p class="etiqueta">ENDEREÇO</p>
+        <p>Rua Coronel Alfredo Born, 652<br>Centro · São Lourenço do Sul, RS<br>CEP 96170-000</p>
+      </div>
+      <div>
+        <p class="etiqueta">CONTATO</p>
+        <p><a href="https://wa.me/5553991459101" target="_blank" rel="noopener">WhatsApp (53) 99145-9101</a><br>
+        <a href="https://www.instagram.com/mundodoeletronicosls/" target="_blank" rel="noopener">Instagram @mundodoeletronicosls</a></p>
+      </div>
+      <div>
+        <p class="etiqueta">HORÁRIO</p>
+        <!-- CONFIRMAR COM O CLIENTE: horário completo -->
+        <p>Abre às 08:30<br><span class="suave" data-status-rodape></span></p>
+      </div>
+    </div>
+    <div class="rodape-mundo" aria-hidden="true">
+      <span class="rm-contorno">MUNDO</span>
+      <span class="rm-cheio">MUNDO</span>
+    </div>
+    <p class="copy container">© 2026 Mundo dos Eletrônicos. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- 14. WhatsApp flutuante -->
+  <div class="zap-flutua">
+    <p class="zap-balao" aria-hidden="true">Orçamento rápido? Chama aqui</p>
+    <a class="zap-btn" href="https://wa.me/5553991459101?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Chamar a Mundo dos Eletrônicos no WhatsApp"><svg class="ico-zap" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.9L2.3 21.8l4.8-1.3A9.8 9.8 0 1 0 12 2.2zm0 1.8a8 8 0 1 1-4.1 14.9l-.3-.2-2.8.8.8-2.7-.2-.3A8 8 0 0 1 12 4z"/><path d="M8.6 7.3c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.1-.2.3 0 .6.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.8.9c.3.1.4.2.5.3 0 .2 0 .9-.3 1.6-.3.7-1.6 1.4-2.2 1.4-.6.1-1.3.2-4.1-.9-3.4-1.4-5.5-4.9-5.7-5.1-.2-.2-1.3-1.8-1.3-3.4 0-1.6.8-2.4 1.1-2.7z"/></svg></a>
+  </div>
+
+  <!-- Grão sutil -->
+  <div class="grao" aria-hidden="true"></div>
+</body>
+</html>

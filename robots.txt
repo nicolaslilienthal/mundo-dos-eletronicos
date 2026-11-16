@@ -1,0 +1,5 @@
+# CONFIRMAR DOMÍNIO: troque o endereço abaixo pelo domínio final
+User-agent: *
+Allow: /
+
+Sitemap: https://www.mundodoseletronicos.com.br/sitemap.xml
